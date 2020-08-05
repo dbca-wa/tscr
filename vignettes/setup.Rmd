@@ -1,0 +1,60 @@
+---
+title: "Setup"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Setup}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(tscr)
+```
+
+This vignette will show how to set up `tscr` via environment variables to connect
+to either the TSC API, or the TSC UAT API (to test write operations on disposable data).
+
+## Settings via environment variables
+Run `usethis::edit_r_environ()` to open your `.Renviron` file.
+Paste the following code into the file with your own TSC credentials, then
+restart your R session (Ctrl+Shift+F10 in RStudio) to apply the changes.
+
+`tscr` will use these environment variables as defaults for the TSC API location
+and authentication.
+
+```{r, eval=FALSE}
+TODO
+```
+
+## Settings via setup
+To jump between TSC instances, you can set up `tscr` via `tscr::tscr_setup()`.
+
+```{r, eval=FALSE}
+tscr::setup(
+  api_url = "https://tsc.dbca.wa.gov.au/api/1/",
+  api_token = "Token xxxx",
+  verbose = TRUE
+)
+# typically followed by several functions requiring above settings
+```
+
+## Settings via parameters
+You can run individual functions with specific settings as parameters.
+The tests set the TSC UAT credentials explicitly this way.
+
+```{r, eval=FALSE}
+tscr::tsc_GET(
+  serializer = "area",
+  api_url = "https://tsc.dbca.wa.gov.au/api/1/",
+  api_token = "Token xxxx",
+  verbose = TRUE
+)
+```
+
