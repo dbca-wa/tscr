@@ -50,7 +50,7 @@ setters and getters.
 To jump between TSC instances, you can set up `tscr` via `tscr::tscr_setup()`.
 
 ```{r, eval=FALSE}
-tscr::setup(
+tscr::tsc_setup(
   api_url = "https://tsc.dbca.wa.gov.au/api/1/",
   api_token = "Token xxxx",
   test_api_url = "https://tsc-uat.dbca.wa.gov.au/api/1/",

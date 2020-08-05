@@ -1,3 +1,13 @@
+reference:
+- title: API
+  contents:
+  - has_concept("api")
+- title: Data
+  contents:
+  - has_concept("data")
+- title: Helpers
+  contents:
+  - has_concept("helpers")
 authors:
   DBCA:
   html: "<img src='man/figures/dbca_bcs.png' width='150' alt='DBCA'/>"

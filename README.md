@@ -16,7 +16,7 @@ The goal of tscr is to provide access to TSC data, and to provide
 working examples of analysis and visualisation of TSC data to answer QA,
 ecological, and management questions.
 
-## Installation
+## Installation and Setup
 
 You can install tscr from [GitHub](https://github.com/dbca-wa/tscr/)
 with:
@@ -26,8 +26,15 @@ with:
 remotes::install_github("dbca-wa/tscr")
 ```
 
-Read `vignette("setup", package = "tscr")` to learn how to configure
-tscr to use TSC’s API.
+To set up `tscr`, run `usethis::edit_r_environ()`, add your TSC API
+Token, then restart your R session.
+
+``` r
+TSC_API_TOKEN="Token xxx"
+```
+
+Read `vignette("setup", package = "tscr")` to learn more how to
+configure `tscr`.
 
 ## Working examples
 

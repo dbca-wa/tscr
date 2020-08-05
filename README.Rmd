@@ -35,7 +35,7 @@ You can install tscr from [GitHub](https://github.com/dbca-wa/tscr/) with:
 remotes::install_github("dbca-wa/tscr")
 ```
 
-To set up `tscr`, run `usethis::edit_r_environ`, add your TSC API Token, then 
+To set up `tscr`, run `usethis::edit_r_environ()`, add your TSC API Token, then 
 restart your R session.
 
 ```{r, eval=FALSE}
