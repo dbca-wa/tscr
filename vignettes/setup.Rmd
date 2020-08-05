@@ -29,9 +29,22 @@ restart your R session (Ctrl+Shift+F10 in RStudio) to apply the changes.
 `tscr` will use these environment variables as defaults for the TSC API location
 and authentication.
 
+TSC users can find their API Token on their "Profile" page.
+The API Token is a character string starting with "Token ".
+We use [TSC UAT](https://tsc-uat.dbca.wa.gov.au/api/1/) to test this package
+and suggest that users use it to test data uploads.
+
 ```{r, eval=FALSE}
-TODO
+TSC_API_URL="https://tsc.dbca.wa.gov.au/api/1/"
+TSC_API_TOKEN="Token xxx"
+TSC_TEST_API_URL="https://tsc-uat.dbca.wa.gov.au/api/1/"
+TSC_TEST_API_TOKEN="Token xxx"
+TSC_VERBOSE=TRUE
 ```
+
+At a minimum, `tscr` needs `TSC_API_TOKEN` set. 
+The other settings should work with defaults, but `tscr` nevertheless offers
+setters and getters.
 
 ## Settings via setup
 To jump between TSC instances, you can set up `tscr` via `tscr::tscr_setup()`.
@@ -40,6 +53,8 @@ To jump between TSC instances, you can set up `tscr` via `tscr::tscr_setup()`.
 tscr::setup(
   api_url = "https://tsc.dbca.wa.gov.au/api/1/",
   api_token = "Token xxxx",
+  test_api_url = "https://tsc-uat.dbca.wa.gov.au/api/1/",
+  test_api_token = "Token xxxx",
   verbose = TRUE
 )
 # typically followed by several functions requiring above settings
@@ -54,6 +69,8 @@ tscr::tsc_GET(
   serializer = "area",
   api_url = "https://tsc.dbca.wa.gov.au/api/1/",
   api_token = "Token xxxx",
+  test_api_url = "https://tsc-uat.dbca.wa.gov.au/api/1/",
+  test_api_token = "Token xxxx",
   verbose = TRUE
 )
 ```
