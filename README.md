@@ -12,13 +12,13 @@ coverage](https://codecov.io/gh/dbca-wa/tscr/branch/master/graph/badge.svg)](htt
 issues](https://img.shields.io/github/issues/dbca-wa/tscr.svg?style=popout)](https://github.com/dbca-wa/tscr/issues)
 <!-- badges: end -->
 
-The goal of tscr is to provide access to TSC data, and to provide
+The goal of `tscr` is to provide access to TSC data, and to provide
 working examples of analysis and visualisation of TSC data to answer QA,
 ecological, and management questions.
 
 ## Installation and Setup
 
-You can install tscr from [GitHub](https://github.com/dbca-wa/tscr/)
+You can install `tscr` from [GitHub](https://github.com/dbca-wa/tscr/)
 with:
 
 ``` r
@@ -33,8 +33,9 @@ Token, then restart your R session.
 TSC_API_TOKEN="Token xxx"
 ```
 
-Read `vignette("setup", package = "tscr")` to learn more how to
-configure `tscr`.
+Read `vignette("setup", package = "tscr")` (online
+[here](https://dbca-wa.github.io/tscr/articles/setup.html)) to learn
+more about the configuration of `tscr`.
 
 ## Working examples
 
@@ -43,4 +44,10 @@ questions with TSC data.
 
 ## Contribute
 
-Learn how to contribute by reading the Contributing guidelines.
+Found a bug in `tscr`, need a new `tscr` feature, or need a working
+example to generate a data product from TSC? Let us know
+[here](https://github.com/dbca-wa/tscr/issues/new/choose)\!
+
+Want to chat about TSC? Join the [“TSC” group on DBCA’s
+Teams](https://teams.microsoft.com/_#/conversations/General?threadId=19:20412eea61c949e59460ece939a128cd@thread.tacv2&ctx=channel)\!
+(You’ll need a DBCA account to access this group.)
