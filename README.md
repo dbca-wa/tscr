@@ -26,7 +26,8 @@ with:
 remotes::install_github("dbca-wa/tscr")
 ```
 
-Read vignette “Setup” to learn how to configure tscr to use TSC’s API.
+Read `vignette("setup", package = "tscr")` to learn how to configure
+tscr to use TSC’s API.
 
 ## Working examples
 
