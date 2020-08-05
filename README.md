@@ -5,6 +5,11 @@
 
 <!-- badges: start -->
 
+![CI](https://github.com/dbca-wa/tscr/workflows/tic/badge.svg) [![Test
+coverage](https://codecov.io/gh/dbca-wa/tscr/branch/master/graph/badge.svg)](https://codecov.io/gh/dbca-wa/tscr?branch=master)
+[![Last-changedate](https://img.shields.io/github/last-commit/dbca-wa/tscr.svg)](https://github.com/dbca-wa/tscr/commits/master)
+[![GitHub
+issues](https://img.shields.io/github/issues/dbca-wa/tscr.svg?style=popout)](https://github.com/dbca-wa/tscr/issues)
 <!-- badges: end -->
 
 The goal of tscr is to provide access to TSC data, and to provide

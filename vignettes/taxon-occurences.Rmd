@@ -24,13 +24,15 @@ knitr::opts_chunk$set(
 library(tscr)
 ```
 
-# Setup wastdr
+# Setup tscr
 Read how to [setup](https://dbca-wa.github.io/tscr/articles/setup.html) tscr
 to the TSC API.
 
 # Download Taxon Occurrences from TSC
 We get Taxon ocurrences with their point representation from TSC.
 Currently, all Fauna and Flora occurrences have only points, not polygons.
+In future, Flora Populations can be captured as polygons representing the entire
+population, or a surveyed part of it.
 
 ```{r, eval=F}
 # tae <- tscr::tsc_GET("occ-taxon-points") # 137k records
