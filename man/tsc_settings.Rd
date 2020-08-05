@@ -35,4 +35,9 @@ get_tsc_verbose()
 tsc_settings()
 }
 }
+\seealso{
+Other helpers: 
+\code{\link{get_more}()},
+\code{\link{tsc_online}()}
+}
 \concept{helpers}

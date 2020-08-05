@@ -29,19 +29,27 @@ Read how to [setup](https://dbca-wa.github.io/tscr/articles/setup.html) tscr
 to the TSC API.
 
 # Download Taxon Occurrences from TSC
-We get Taxon ocurrences with their point representation from TSC.
+We get Taxon occurrences with their point representation from TSC.
 Currently, all Fauna and Flora occurrences have only points, not polygons.
 In future, Flora Populations can be captured as polygons representing the entire
 population, or a surveyed part of it.
 
 ```{r, eval=F}
-# tae <- tscr::tsc_GET("occ-taxon-points") # 137k records
-# save(tae, file=here::here("data-raw/tae.RData", compress="xz")
-     
-# tae_gj <- tae %>%
-  # magrittr::extract2("features") %>%
-  # geojsonio::as.json() %>%
-  # geojsonsf::geojson_sf()
+areas <- tsc_GET("area", chunk_size = 100) %>% tsc_parse()
+# Areas as tibble
+head(areas) %>% knitr::kable()
 
-# save(tae_gj, file=here::here("data-raw/tae_gj.RData", compress="xz")
+# Taxon occurrences with their Point representation
+tae_res <- tsc_GET("occ-taxon-points", max_records = 10) 
+
+# Taxon occurrences as tibble
+tae <- tae_res %>% tsc_parse()
+head(tae) %>% knitr::kable()
+     
+# Taxon occurrences as GeoJSON SimpleFeatures for plotting
+tae_gj <- tae_res %>%
+  magrittr::extract2("data") %>%
+  geojsonio::as.json() %>%
+  geojsonsf::geojson_sf()
+mapview::mapview(tae_gj)
 ```
