@@ -2,7 +2,7 @@
 % Please edit documentation in R/tsc_online.R
 \name{tsc_online}
 \alias{tsc_online}
-\title{Check whether API token is set and WAStD is online}
+\title{Check whether API token is set and TSC is online}
 \usage{
 tsc_online(api_url = get_tsc_api_url(), api_token = get_tsc_api_token())
 }
@@ -11,7 +11,7 @@ tsc_online(api_url = get_tsc_api_url(), api_token = get_tsc_api_token())
 default \code{\link{get_tsc_api_url}}, see \code{\link{tsc_setup}}}
 
 \item{api_token}{(character) The TSC API token,
-default \code{\link{get_tsc_api_token}}, see \code{\link{Tsc_setup}}}
+default \code{\link{get_tsc_api_token}}, see \code{\link{tsc_setup}}}
 }
 \description{
 \lifecycle{stable}

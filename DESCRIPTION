@@ -31,6 +31,8 @@ Imports:
     crayon (>= 1.3.4),
     glue (>= 1.4.1),
     rlang (>= 0.4.7),
+    httr,
+    jsonlite,
     magrittr,
     tibble,
     tidyr,

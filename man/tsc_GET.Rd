@@ -38,7 +38,7 @@ Default: 1000.}
 default \code{\link{get_tsc_api_url}}, see \code{\link{tsc_setup}}}
 
 \item{api_token}{(character) The TSC API token,
-default \code{\link{get_tsc_api_token}}, see \code{\link{Tsc_setup}}}
+default \code{\link{get_tsc_api_token}}, see \code{\link{tsc_setup}}}
 
 \item{verbose}{Whether to show verbose messages.
 Default: \code{\link{get_tsc_verbose}}.}

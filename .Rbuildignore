@@ -6,6 +6,7 @@
 ^\.github$
 ^tic\.R$
 ^data-raw$
+^man-roxygen$
 ^\_pkgdown\.yml$
 ^CODE_OF_CONDUCT\.md$
 ^codecov\.yml$

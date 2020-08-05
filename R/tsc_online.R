@@ -1,4 +1,4 @@
-#' Check whether API token is set and WAStD is online
+#' Check whether API token is set and TSC is online
 #'
 #' \lifecycle{stable}
 #' @template param-auth
