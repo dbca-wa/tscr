@@ -1,4 +1,4 @@
 library(testthat)
-library(tscR)
+library(tscr)
 
-test_check("tscR")
+test_check("tscr")
