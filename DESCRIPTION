@@ -16,7 +16,9 @@ Description: TSC is DBCA's Threatened Species and Communities Data Portal.
   tscR provides helpers and working examples of getting data in and out of TSC's
   API, as well as starting points for data visualisations and analyses of TSC 
   data.
-URL: https://github.com/dbca-wa/tscR
+URL: https://github.com/dbca-wa/tscR,
+  https://dbca-wa.github.io/tscR/
+BugReports: https://github.com/dbca-wa/tscR/issues/new/choose
 License: MIT + file LICENSE
 Language: en_US
 Encoding: UTF-8
