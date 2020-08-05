@@ -6,3 +6,5 @@
 ^\.github$
 ^tic\.R$
 ^data-raw$
+^\_pkgdown\.yml$
+^CODE_OF_CONDUCT\.md$
