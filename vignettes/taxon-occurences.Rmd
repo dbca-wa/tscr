@@ -21,12 +21,11 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
-library(wastdr)
 library(tscR)
 ```
 
 # Setup wastdr
-Read how to [setup](https://dbca-wa.github.io/wastdr/articles/setup.html) wastdr
+Read how to [setup](https://dbca-wa.github.io/tscR/articles/setup.html) tscR
 to the TSC API.
 
 # Download Taxon Occurrences from TSC
@@ -34,13 +33,13 @@ We get Taxon ocurrences with their point representation from TSC.
 Currently, all Fauna and Flora occurrences have only points, not polygons.
 
 ```{r, eval=F}
-tae <- wastdr::wastd_GET("occ-taxon-points") # 137k records
-save(tae, file=here::here("data-raw/tae.RData", compress="xz")
+# tae <- tscR::tsc_GET("occ-taxon-points") # 137k records
+# save(tae, file=here::here("data-raw/tae.RData", compress="xz")
      
-tae_gj <- tae %>%
-  magrittr::extract2("features") %>%
-  geojsonio::as.json() %>%
-  geojsonsf::geojson_sf()
+# tae_gj <- tae %>%
+  # magrittr::extract2("features") %>%
+  # geojsonio::as.json() %>%
+  # geojsonsf::geojson_sf()
 
-save(tae_gj, file=here::here("data-raw/tae_gj.RData", compress="xz")
+# save(tae_gj, file=here::here("data-raw/tae_gj.RData", compress="xz")
 ```

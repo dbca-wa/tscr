@@ -4,9 +4,28 @@
 \name{tscR-package}
 \alias{tscR}
 \alias{tscR-package}
-\title{tscR: What the Package Does (Title Case)}
+\title{tscR: Threatened Species and Communities Data Export and Analysis}
 \description{
-More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+TSC is DBCA's Threatened Species and Communities Data Portal.
+  TSC provides access to its data through a RESTful API. 
+  tscR provides helpers and working examples of getting data in and out of TSC's
+  API, as well as starting points for data visualisations and analyses of TSC 
+  data.
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/dbca-wa/tscR}
+}
+
+}
+\author{
+\strong{Maintainer}: Florian W. Mayer \email{Florian.Mayer@dbca.wa.gov.au} (\href{https://orcid.org/0000-0003-4269-4242}{ORCID})
+
+Other contributors:
+\itemize{
+  \item DBCA [copyright holder, funder]
+}
+
 }
 \keyword{internal}
