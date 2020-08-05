@@ -23,7 +23,10 @@ with:
 
 ``` r
 # install.packages("devtools")
-remotes::install_github("dbca-wa/tscr")
+remotes::install_github("dbca-wa/tscr", 
+                        dependencies = TRUE, 
+                        upgrade = "always",
+                        build_vignettes = TRUE)
 ```
 
 To set up `tscr`, run `usethis::edit_r_environ()`, add your TSC API
@@ -33,9 +36,13 @@ Token, then restart your R session.
 TSC_API_TOKEN="Token xxx"
 ```
 
-Read `vignette("setup", package = "tscr")` (online
+Read vignette “Setup” (online
 [here](https://dbca-wa.github.io/tscr/articles/setup.html)) to learn
-more about the configuration of `tscr`.
+more about the configuration of `tscr`:
+
+``` r
+vignette("setup", package = "tscr")
+```
 
 ## Working examples
 

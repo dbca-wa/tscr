@@ -30,9 +30,12 @@ management questions.
 
 You can install `tscr` from [GitHub](https://github.com/dbca-wa/tscr/) with:
 
-``` r
+```{r, eval=FALSE}
 # install.packages("devtools")
-remotes::install_github("dbca-wa/tscr")
+remotes::install_github("dbca-wa/tscr", 
+                        dependencies = TRUE, 
+                        upgrade = "always",
+                        build_vignettes = TRUE)
 ```
 
 To set up `tscr`, run `usethis::edit_r_environ()`, add your TSC API Token, then 
@@ -43,9 +46,13 @@ TSC_API_TOKEN="Token xxx"
 ```
 
 
-Read `vignette("setup", package = "tscr")` 
+Read vignette "Setup" 
 (online [here](https://dbca-wa.github.io/tscr/articles/setup.html)) 
-to learn more about the configuration of `tscr`.
+to learn more about the configuration of `tscr`:
+
+```{r, eval=FALSE}
+vignette("setup", package = "tscr")
+```
 
 ## Working examples
 Here we'll list vignettes demonstrating working examples of answering questions
