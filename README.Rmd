@@ -86,7 +86,6 @@ to learn more about the configuration of `tscr`:
 vignette("setup", package = "tscr")
 ```
 
-
 ## For package maintainers and contributors
 
 ### Contribute

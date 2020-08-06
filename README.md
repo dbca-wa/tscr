@@ -5,7 +5,8 @@
 
 <!-- badges: start -->
 
-![CI](https://github.com/dbca-wa/tscr/workflows/tic/badge.svg) [![Test
+[![CI](https://github.com/dbca-wa/tscr/workflows/tic/badge.svg)](https://github.com/dbca-wa/tscr/actions)
+[![Test
 coverage](https://codecov.io/gh/dbca-wa/tscr/branch/master/graph/badge.svg)](https://codecov.io/gh/dbca-wa/tscr?branch=master)
 [![Last-changedate](https://img.shields.io/github/last-commit/dbca-wa/tscr.svg)](https://github.com/dbca-wa/tscr/commits/master)
 [![GitHub
@@ -44,6 +45,14 @@ requests” [here](https://github.com/dbca-wa/tscr/issues/new/choose).
 If you wish to run any of the included working examples or create new
 data analyses, install this package and configure `tscr` to TSC’s API
 with your own credentials as outlined below.
+
+Use cases:
+
+  - Create a bulk data export into spreadsheet or GIS formats.
+  - Build your own analyses and reports to answer conservation
+    management, ecological, or QA questions.
+  - ETL of bulk data from third parties (data returns from consultants)
+    into TSC.
 
 ### Installation and Setup
 
@@ -113,7 +122,7 @@ if (fs::file_info("README.md")$modification_time <
 #
 # Checks
 goodpractice::goodpractice(quiet = FALSE)
-devtools::check(cran = TRUE, remote = TRUE, incoming = TRUE)
+devtools::check(cran = FALSE, remote = TRUE, incoming = TRUE)
 #
 # Add new feature to news if user-facing
 usethis::edit_file("NEWS.md")
