@@ -30,10 +30,6 @@ test_that("tsc_GET warns and fails with incorrect api_token", {
   tsc_setup(api_token = "invalid")
   expect_equal(get_tsc_api_token(), "invalid")
 
-  # no warnings in check
-  # warnings when run standalone
-  # expect_warning(tsc_GET("area"))
-
   tsc_setup(api_token = at)
   expect_equal(get_tsc_api_token(), at)
 })
@@ -99,4 +95,4 @@ test_that("tsc_GET combines pagination", {
   expect_true(length(x$data) >= 21)
 })
 
-# usethis::use_r("tsc_GET")
+# usethis::use_r("tsc_GET")  # nolint

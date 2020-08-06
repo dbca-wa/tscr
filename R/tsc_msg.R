@@ -81,4 +81,3 @@ tsc_msg_abort <- function(message) {
 }
 
 # usethis::use_test("tsc_msg") # nolint
-

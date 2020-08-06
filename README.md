@@ -16,7 +16,36 @@ The goal of `tscr` is to provide access to TSC data, and to provide
 working examples of analysis and visualisation of TSC data to answer QA,
 ecological, and management questions.
 
-## Installation and Setup
+## For conservation managers and ecologists
+
+Here we’ll list working examples of conservation management nature,
+ecological, or data QA questions answered with TSC data.
+
+Example questions (to be replaced with working examples):
+
+  - How many birds rose in conservation listing status in WA in the past
+    X years?
+  - Which conservation significant plants have been recorded in DBCA
+    District X?
+  - What is the predicted habitat for a taxon known under taxonomic name
+    X?
+  - Generate a formatted PDF and a plain CSV spreadsheet of threatened
+    flora and fauna names in WA.
+  - Generate an interactive map of all accepted occurrences in area X.
+  - List conservation documents coming up for review within the next 6
+    months.
+  - List occurrences flagged for review.
+
+Help us completing this list by filing new “Data export or analysis
+requests” [here](https://github.com/dbca-wa/tscr/issues/new/choose).
+
+## For data engineers
+
+If you wish to run any of the included working examples or create new
+data analyses, install this package and configure `tscr` to TSC’s API
+with your own credentials as outlined below.
+
+### Installation and Setup
 
 You can install `tscr` from [GitHub](https://github.com/dbca-wa/tscr/)
 with:
@@ -44,12 +73,9 @@ more about the configuration of `tscr`:
 vignette("setup", package = "tscr")
 ```
 
-## Working examples
+## For package maintainers and contributors
 
-Here we’ll list vignettes demonstrating working examples of answering
-questions with TSC data.
-
-## Contribute
+### Contribute
 
 Found a bug in `tscr`, need a new `tscr` feature, or need a working
 example to generate a data product from TSC? Let us know
@@ -58,3 +84,39 @@ example to generate a data product from TSC? Let us know
 Want to chat about TSC? Join the [“TSC” group on DBCA’s
 Teams](https://teams.microsoft.com/_#/conversations/General?threadId=19:20412eea61c949e59460ece939a128cd@thread.tacv2&ctx=channel)\!
 (You’ll need a DBCA account to access this group.)
+
+### Release
+
+Tasks that can be run for each release are shown below.
+
+``` r
+usethis::use_version(which = "dev") # patch, dev, minor, major
+
+# Rebuild included package data, used for tests and vignettes
+source(here::here("data-raw/make_data.R"))
+
+# Tests shall pass
+devtools::test()
+
+styler::style_pkg()
+lintr:::addin_lint_package() # some lint errors are OK
+devtools::document(roclets = c("rd", "collate", "namespace", "vignette"))
+spelling::spell_check_package()
+spelling::spell_check_files("README.Rmd", lang = "en_AU")
+spelling::update_wordlist()
+codemetar::write_codemeta("tscr")
+if (fs::file_info("README.md")$modification_time <
+  fs::file_info("README.Rmd")$modification_time) {
+  rmarkdown::render("README.Rmd", encoding = "UTF-8", clean = TRUE)
+  if (fs::file_exists("README.html")) fs::file_delete("README.html")
+}
+#
+# Checks
+goodpractice::goodpractice(quiet = FALSE)
+devtools::check(cran = TRUE, remote = TRUE, incoming = TRUE)
+#
+# Add new feature to news if user-facing
+usethis::edit_file("NEWS.md")
+
+# Commit and push
+```

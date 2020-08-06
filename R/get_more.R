@@ -22,4 +22,4 @@ get_more <- function(total_count, limit) {
   return(FALSE)
 }
 
-# usethis::use_test("get_more")
+# usethis::use_test("get_more")  # nolint

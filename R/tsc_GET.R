@@ -35,13 +35,13 @@
 #' area_records <- tsc_GET("area")
 #' }
 tsc_GET <- function(serializer,
-                      query = list(),
-                      format = "json",
-                      max_records = NULL,
-                      chunk_size = 1000,
-                      api_url = get_tsc_api_url(),
-                      api_token = get_tsc_api_token(),
-                      verbose = get_tsc_verbose()) {
+                    query = list(),
+                    format = "json",
+                    max_records = NULL,
+                    chunk_size = 1000,
+                    api_url = get_tsc_api_url(),
+                    api_token = get_tsc_api_token(),
+                    verbose = get_tsc_verbose()) {
   # Prep and gate checks
   ua <- httr::user_agent("http://github.com/dbca-wa/tscr")
   url_parts <- httr::parse_url(api_url)
@@ -62,7 +62,7 @@ tsc_GET <- function(serializer,
 
   res_parsed <- res %>%
     httr::content(as = "text", encoding = "UTF-8") %>%
-    {
+    { # nolint
       if (format == "json") {
         jsonlite::fromJSON(., flatten = FALSE, simplifyVector = FALSE)
       } else {
@@ -98,12 +98,12 @@ tsc_GET <- function(serializer,
   # server side data (next_url is Null) or our max_records.
   if (get_more(total_count, max_records) == TRUE) {
     while (!is.null(next_url) &&
-           get_more(total_count, max_records) == TRUE) {
+      get_more(total_count, max_records) == TRUE) {
       tsc_msg_info(glue::glue("Fetching {next_url}"))
       next_res <- httr::GET(next_url, auth, ua) %>%
         httr::warn_for_status(.) %>%
         httr::content(., as = "text", encoding = "UTF-8") %>%
-        {
+        { # nolint
           if (format == "json") {
             jsonlite::fromJSON(., flatten = FALSE, simplifyVector = FALSE)
           } else {

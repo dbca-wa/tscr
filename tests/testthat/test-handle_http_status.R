@@ -7,4 +7,4 @@ test_that("handle_http_status warns about HTTP error", {
     tsc_GET("area", max_records = 1, verbose = F, format = "csv")
   )
 })
-# usethis::use_r("handle_http_status")
+# usethis::use_r("handle_http_status")  # nolint

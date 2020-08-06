@@ -19,7 +19,7 @@ handle_http_status <- function(response) {
   }
 
   if (httr::http_error(response)) {
-   tsc_msg_warn(glue::glue(
+    tsc_msg_warn(glue::glue(
       "TSC API request failed with [{httr::status_code(response)}]"
     ))
   }
@@ -37,4 +37,4 @@ handle_http_status <- function(response) {
   response
 }
 
-# usethis::use_test("handle_http_status")
+# usethis::use_test("handle_http_status")  # nolint

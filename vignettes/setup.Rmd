@@ -31,8 +31,10 @@ and authentication.
 
 TSC users can find their API Token on their "Profile" page.
 The API Token is a character string starting with "Token ".
-We use [TSC UAT](https://tsc-uat.dbca.wa.gov.au/api/1/) to test this package
-and suggest that users use it to test data uploads.
+While [TSC (Production)](https://tsc.dbca.wa.gov.au/api/1/) contains the 
+production data, we use the User Acceptance Testing (UAT) instance at
+[TSC UAT](https://tsc-uat.dbca.wa.gov.au/api/1/) to test this package's read and 
+write functionality. Users can also use TSC UAT to test their own data uploads.
 
 ```{r, eval=FALSE}
 TSC_API_URL="https://tsc.dbca.wa.gov.au/api/1/"

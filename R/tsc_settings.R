@@ -57,18 +57,17 @@ print.tsc_settings <- function(x, ...) {
 #' # default "https://tsc.dbca.wa.gov.au/api/1/":
 #' tsc_setup(api_token = "Token xxx")
 tsc_setup <- function(api_url = NULL,
-                       api_token = NULL,
-                       test_api_url = NULL,
-                       test_api_token = NULL,
-                       verbose = NULL
-) {
+                      api_token = NULL,
+                      test_api_url = NULL,
+                      test_api_token = NULL,
+                      verbose = NULL) {
   if (!is.null(api_url)) Sys.setenv("TSC_API_URL" = api_url)
   if (!is.null(api_token)) Sys.setenv("TSC_API_TOKEN" = api_token)
   if (!is.null(test_api_url)) Sys.setenv("TSC_TEST_API_URL" = test_api_url)
-  if (!is.null(test_api_token))
+  if (!is.null(test_api_token)) {
     Sys.setenv("TSC_TEST_API_TOKEN" = test_api_token)
+  }
   if (!is.null(verbose)) Sys.setenv("TSC_VERBOSE" = verbose)
-
 }
 
 # -----------------------------------------------------------------------------#
@@ -79,7 +78,7 @@ tsc_setup <- function(api_url = NULL,
 #' @rdname tsc_settings
 get_tsc_api_url <- function() {
   Sys.getenv("TSC_API_URL",
-             unset = "https://tsc.dbca.wa.gov.au/api/1/"
+    unset = "https://tsc.dbca.wa.gov.au/api/1/"
   )
 }
 
@@ -99,7 +98,7 @@ get_tsc_api_token <- function() {
 #' @rdname tsc_settings
 get_tsc_test_api_url <- function() {
   Sys.getenv("TSC_TEST_API_URL",
-             unset = "https://tsc-uat.dbca.wa.gov.au/api/1/"
+    unset = "https://tsc-uat.dbca.wa.gov.au/api/1/"
   )
 }
 

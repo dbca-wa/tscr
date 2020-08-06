@@ -5,4 +5,4 @@ test_that("get_more works", {
   testthat::expect_false(get_more(10L, 10))
 })
 
-# usethis::use_r("get_more")
+# usethis::use_r("get_more")  # nolint

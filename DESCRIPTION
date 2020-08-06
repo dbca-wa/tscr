@@ -10,7 +10,7 @@ Authors@R:
              comment = c(ORCID = "0000-0003-4269-4242")),
       person(given = "DBCA",
              role = c("cph", "fnd")))
-Maintainer: Florian Mayer <Florian.Mayer@dbca.wa.gov.au>
+Maintainer: Florian W. Mayer <Florian.Mayer@dbca.wa.gov.au>
 Description: TSC is DBCA's Threatened Species and Communities Data Portal.
   TSC provides access to its data through a RESTful API. 
   tscr provides helpers and working examples of getting data in and out of TSC's
@@ -44,7 +44,11 @@ Suggests:
     covr,
     geojsonio,
     geojsonsf,
-    mapview
+    mapview,
+    styler,
+    lintr,
+    goodpractice,
+    devtools
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 RdMacros: 
