@@ -55,10 +55,7 @@ Use cases:
 -   ETL of bulk data from third parties (data returns from consultants)
     into TSC.
 
-### Installation and Setup
-
-You can install `tscr` from [GitHub](https://github.com/dbca-wa/tscr/)
-with:
+Install `tscr`:
 
 ``` r
 # install.packages("devtools")
@@ -68,8 +65,8 @@ remotes::install_github("dbca-wa/tscr",
                         build_vignettes = TRUE)
 ```
 
-To set up `tscr`, run `usethis::edit_r_environ()`, add your TSC API
-Token, then restart your R session.
+Set up `tscr`, run `usethis::edit_r_environ()`, add your TSC API Token,
+then restart your R session.
 
 ``` r
 TSC_API_TOKEN="Token xxx"
@@ -77,15 +74,13 @@ TSC_API_TOKEN="Token xxx"
 
 Read vignette “Setup” (online
 [here](https://dbca-wa.github.io/tscr/articles/setup.html)) to learn
-more about the configuration of `tscr`:
+more about the configuration of `tscr`.
 
-``` r
-vignette("setup", package = "tscr")
-```
+Working examples for data access and analyses are available as package
+vignettes, online as articles
+[here](https://dbca-wa.github.io/tscr/index.html).
 
-## For package maintainers and contributors
-
-### Contribute
+## For contributors
 
 Found a bug in `tscr`, need a new `tscr` feature, or need a working
 example to generate a data product from TSC? Let us know
@@ -95,7 +90,11 @@ Want to chat about TSC? Join the [“TSC” group on DBCA’s
 Teams](https://teams.microsoft.com/l/channel/19%3a20412eea61c949e59460ece939a128cd%40thread.tacv2/General?groupId=920e28d1-f344-429d-a2cb-613103a99b9e&tenantId=7b934664-cdcf-4e28-a3ee-1a5bcca0a1b6)!
 (You’ll need a DBCA account to access this group.)
 
-### Release
+Want to contribute code? Start with the [contribution
+guide](https://dbca-wa.github.io/tscr/CONTRIBUTING.html), but don’t be
+afraid to ask for help and submit early PRs.
+
+## For package maintainers and contributors
 
 Tasks that can be run for each release are shown below.
 
