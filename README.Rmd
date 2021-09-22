@@ -22,10 +22,9 @@ knitr::opts_chunk$set(
 [![GitHub issues](https://img.shields.io/github/issues/dbca-wa/tscr.svg?style=popout)](https://github.com/dbca-wa/tscr/issues)
 <!-- badges: end -->
 
-The goal of `tscr` is to provide access to TSC data, and to provide working 
-examples of analysis and visualisation of TSC data to answer QA, ecological, and
-management questions.
-
+The goal of `tscr` is to provide read/write access to TSC data, and to provide 
+working examples of analysis and visualisation of TSC data to answer QA, ecological, and
+management questions as well as working data ETL pipelines.
 
 ## For conservation managers and ecologists
 

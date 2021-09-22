@@ -2,12 +2,27 @@ reference:
 - title: API
   contents:
   - has_concept("api")
-- title: Data
+- title: Data access
   contents:
   - has_concept("data")
 - title: Helpers
   contents:
   - has_concept("helpers")
+articles:
+- title: Setup
+  desc: Configure tscr
+  navbar: Setup
+  contents:
+  - setup
+- title: Access
+  desc: Access TSC data
+  navbar: Access
+  contents:
+  - taxon-occurrences
+- title: Analyse
+  desc: Analyse TSC data
+  navbar: Analyse
+
 authors:
   DBCA:
   html: "<img src='man/figures/dbca_bcs.png' width='150' alt='DBCA'/>"
