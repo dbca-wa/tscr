@@ -1,10 +1,10 @@
-#' Get or set TSC settings
+#' Get TSC settings
 #'
 #' \lifecycle{stable}
 #'
 #' \code{tsc_setup} sets your production and test settings.
 #' @return \code{\link{tsc_settings}} prints your settings.
-#' @family helpers
+#' @family settings
 #' @export
 #' @examples
 #' \dontrun{
@@ -50,6 +50,7 @@ print.tsc_settings <- function(x, ...) {
 #'   leading with "Token " (character).
 #'   Default: \code{\link{get_tsc_api_token}}.
 #' @param verbose Verbosity for tscr.
+#' @family settings
 #' @export
 #' @examples
 #' # TSC users can access their TSC API Token on their profile page on TSC.

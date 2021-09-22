@@ -1,5 +1,5 @@
 ---
-title: "Taxon occurences"
+title: "Access taxon point occurrence records"
 output: 
   rmarkdown::html_document:
     toc: true
@@ -8,7 +8,7 @@ output:
     theme: yeti
     highlight: tango
 vignette: >
-  %\VignetteIndexEntry{taxon-occurences}
+  %\VignetteIndexEntry{taxon-occurrences}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -105,7 +105,7 @@ tae %>%
 head(tae) %>% knitr::kable()
 ```
 
-## Occurences on a map
+## Occurrences on a map
 Taxon occurrences as GeoJSON SimpleFeatures for plotting.
 We use the field `as_html` as the popup and the geolocation capture method for
 grouping.

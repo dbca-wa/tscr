@@ -19,6 +19,11 @@ default \code{\link{get_tsc_api_token}}, see \code{\link{tsc_setup}}}
 \seealso{
 Other helpers: 
 \code{\link{get_more}()},
-\code{\link{tsc_settings}()}
+\code{\link{handle_http_status}()},
+\code{\link{tsc_msg_abort}()},
+\code{\link{tsc_msg_info}()},
+\code{\link{tsc_msg_noop}()},
+\code{\link{tsc_msg_success}()},
+\code{\link{tsc_msg_warn}()}
 }
 \concept{helpers}

@@ -25,7 +25,12 @@ testthat::expect_false(get_more(10L, 10))
 }
 \seealso{
 Other helpers: 
-\code{\link{tsc_online}()},
-\code{\link{tsc_settings}()}
+\code{\link{handle_http_status}()},
+\code{\link{tsc_msg_abort}()},
+\code{\link{tsc_msg_info}()},
+\code{\link{tsc_msg_noop}()},
+\code{\link{tsc_msg_success}()},
+\code{\link{tsc_msg_warn}()},
+\code{\link{tsc_online}()}
 }
 \concept{helpers}

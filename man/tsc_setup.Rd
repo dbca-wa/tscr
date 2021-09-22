@@ -40,3 +40,8 @@ functions default to use the default URL, but require an API Token to work.
 # default "https://tsc.dbca.wa.gov.au/api/1/":
 tsc_setup(api_token = "Token xxx")
 }
+\seealso{
+Other settings: 
+\code{\link{tsc_settings}()}
+}
+\concept{settings}

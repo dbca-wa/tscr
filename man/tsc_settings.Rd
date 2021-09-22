@@ -7,7 +7,7 @@
 \alias{get_tsc_test_api_url}
 \alias{get_tsc_test_api_token}
 \alias{get_tsc_verbose}
-\title{Get or set TSC settings}
+\title{Get TSC settings}
 \usage{
 tsc_settings()
 
@@ -36,8 +36,7 @@ tsc_settings()
 }
 }
 \seealso{
-Other helpers: 
-\code{\link{get_more}()},
-\code{\link{tsc_online}()}
+Other settings: 
+\code{\link{tsc_setup}()}
 }
-\concept{helpers}
+\concept{settings}

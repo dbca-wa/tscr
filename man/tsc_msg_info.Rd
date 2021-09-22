@@ -16,10 +16,13 @@ tsc_msg_info(message)
 tsc_msg_info("This is an info message.")
 }
 \seealso{
-Other utilities: 
+Other helpers: 
+\code{\link{get_more}()},
+\code{\link{handle_http_status}()},
 \code{\link{tsc_msg_abort}()},
 \code{\link{tsc_msg_noop}()},
 \code{\link{tsc_msg_success}()},
-\code{\link{tsc_msg_warn}()}
+\code{\link{tsc_msg_warn}()},
+\code{\link{tsc_online}()}
 }
-\concept{utilities}
+\concept{helpers}

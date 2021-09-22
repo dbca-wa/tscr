@@ -92,7 +92,7 @@ example to generate a data product from TSC? Let us know
 [here](https://github.com/dbca-wa/tscr/issues/new/choose)!
 
 Want to chat about TSC? Join the [“TSC” group on DBCA’s
-Teams](https://teams.microsoft.com/_#/conversations/General?threadId=19:20412eea61c949e59460ece939a128cd@thread.tacv2&ctx=channel)!
+Teams](https://teams.microsoft.com/l/channel/19%3a20412eea61c949e59460ece939a128cd%40thread.tacv2/General?groupId=920e28d1-f344-429d-a2cb-613103a99b9e&tenantId=7b934664-cdcf-4e28-a3ee-1a5bcca0a1b6)!
 (You’ll need a DBCA account to access this group.)
 
 ### Release

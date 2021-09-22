@@ -16,3 +16,14 @@ The input HTTP response.
 Status 401: Instruct how to authenticate.
 Status http_error: warn and show status.
 }
+\seealso{
+Other helpers: 
+\code{\link{get_more}()},
+\code{\link{tsc_msg_abort}()},
+\code{\link{tsc_msg_info}()},
+\code{\link{tsc_msg_noop}()},
+\code{\link{tsc_msg_success}()},
+\code{\link{tsc_msg_warn}()},
+\code{\link{tsc_online}()}
+}
+\concept{helpers}

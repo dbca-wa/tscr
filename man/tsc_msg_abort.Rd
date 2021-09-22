@@ -18,10 +18,13 @@ tsc_msg_abort("This is an error, abort.")
 }
 }
 \seealso{
-Other utilities: 
+Other helpers: 
+\code{\link{get_more}()},
+\code{\link{handle_http_status}()},
 \code{\link{tsc_msg_info}()},
 \code{\link{tsc_msg_noop}()},
 \code{\link{tsc_msg_success}()},
-\code{\link{tsc_msg_warn}()}
+\code{\link{tsc_msg_warn}()},
+\code{\link{tsc_online}()}
 }
-\concept{utilities}
+\concept{helpers}

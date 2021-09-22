@@ -1,11 +1,18 @@
 reference:
 - title: API
+  desc: Top level functions to interact with the API.
   contents:
   - has_concept("api")
-- title: Data access
+- title: Data
+  desc: Included example datasets for use in testing and as templates for data import.
   contents:
   - has_concept("data")
+- title: Settings
+  desc: Configuration of tscr.
+  contents:
+  - has_concept("settings")
 - title: Helpers
+  desc: Helper methods used by other tscr functions.
   contents:
   - has_concept("helpers")
 articles:
@@ -18,11 +25,15 @@ articles:
   desc: Access TSC data
   navbar: Access
   contents:
-  - taxon-occurrences
+  - 'taxon-occurrences'
 - title: Analyse
   desc: Analyse TSC data
   navbar: Analyse
-
+  contents:
+- title: Import
+  desc: Import data into TSC
+  navbar: Import
+  contents:
 authors:
   DBCA:
   html: "<img src='man/figures/dbca_bcs.png' width='150' alt='DBCA'/>"

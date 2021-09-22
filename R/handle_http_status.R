@@ -6,6 +6,7 @@
 #' @param response An HTTP response.
 #' @return The input HTTP response.
 #' @export
+#' @family helpers
 handle_http_status <- function(response) {
   if (response$status_code == 401) {
     tsc_msg_warn(
@@ -13,7 +14,7 @@ handle_http_status <- function(response) {
         "Authorization failed.\n",
         "Run tscr::tsc_setup(api_token='Token XXX').\n",
         "with the API token under \"My Profile\" in TSC.\n",
-        "See ?wastdr_setup or vignette('setup', package='wastdr')."
+        "See ?tsc_setup or vignette('setup', package='tscr')."
       )
     )
   }

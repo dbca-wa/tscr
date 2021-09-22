@@ -5,7 +5,7 @@
 #' @param message (chr) A message to print
 #' @return NULL
 #' @export
-#' @family utilities
+#' @family helpers
 #' @examples
 #' tsc_msg_info("This is an info message.")
 tsc_msg_info <- function(message) {
@@ -20,7 +20,7 @@ tsc_msg_info <- function(message) {
 #' @param message (chr) A message to print
 #' @return NULL
 #' @export
-#' @family utilities
+#' @family helpers
 #' @examples
 #' tsc_msg_success("This is a success message.")
 tsc_msg_success <- function(message) {
@@ -36,7 +36,7 @@ tsc_msg_success <- function(message) {
 #' @param message (chr) A message to print
 #' @return NULL
 #' @export
-#' @family utilities
+#' @family helpers
 #' @examples
 #' tsc_msg_noop("This is a noop message.")
 tsc_msg_noop <- function(message) {
@@ -52,7 +52,7 @@ tsc_msg_noop <- function(message) {
 #' @param message (chr) A message to print
 #' @return NULL
 #' @export
-#' @family utilities
+#' @family helpers
 #' @examples
 #' \dontrun{
 #' tsc_msg_warn("This is a warning.")
@@ -70,7 +70,7 @@ tsc_msg_warn <- function(message) {
 #' @param message (chr) A message to print
 #' @return NULL
 #' @export
-#' @family utilities
+#' @family helpers
 #' @examples
 #' \dontrun{
 #' tsc_msg_abort("This is an error, abort.")
