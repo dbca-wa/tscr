@@ -61,7 +61,7 @@ Install `tscr`:
 # install.packages("devtools")
 remotes::install_github("dbca-wa/tscr", 
                         dependencies = TRUE, 
-                        upgrade = "always",
+                        upgrade = "ask",
                         build_vignettes = TRUE)
 ```
 
@@ -72,12 +72,12 @@ then restart your R session.
 TSC_API_TOKEN="Token xxx"
 ```
 
-Read vignette “Setup” (online
-[here](https://dbca-wa.github.io/tscr/articles/setup.html)) to learn
-more about the configuration of `tscr`.
+Read
+[`vignette("setup", package="tscr")`](https://dbca-wa.github.io/tscr/articles/setup.html))
+to learn more about the configuration of `tscr`.
 
 Working examples for data access and analyses are available as package
-vignettes, online as articles
+vignettes (`browseVignettes("tscr")`), and as articles
 [here](https://dbca-wa.github.io/tscr/index.html).
 
 ## For contributors
