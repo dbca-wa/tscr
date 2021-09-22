@@ -14,6 +14,7 @@ vignette: >
 ---
 
 ```{r, include = FALSE}
+options(rmarkdown.html_vignette.check_title = FALSE)
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
@@ -37,15 +38,15 @@ In future, Flora Populations can be captured as polygons representing the entire
 population, or a surveyed part of it.
 
 ## Areas as table
-In this example, we download the full list of Areas, parse the data into a table,
-and display selected columns of the first few Areas.
+In this example, we download a subset of 10 Areas, parse the data into a table,
+and display selected columns of the downloaded Areas.
 
 ```{r areas}
-areas <- tsc_GET("area", chunk_size = 100) %>% tsc_parse()
+areas <- tsc_GET("area", chunk_size = 100, max_records = 10) %>% tsc_parse()
 
 areas %>% 
-  head() %>% 
   dplyr::select(name, area_type) %>% 
+  dplyr::arrange(area_type) %>% 
   knitr::kable()
 ```
 
@@ -91,7 +92,6 @@ Each field can serve as a filter via the query attribute.
 # Taxon occurrences with their Point representation
 tae_res <- tsc_GET("occ-taxon-points", max_records = 10) 
 ```
-
 ## Occurrences as table
 We show some fields as an interactive table. The field `as_html` contains 
 rendered content which can be used as a map popup.
@@ -119,3 +119,10 @@ tae_gj <- tae_res %>%
 
 mapview::mapview(tae_gj, popup="as_html", zcol="geolocation_capture_method")
 ```
+
+## Outlook
+This vignette will be expanded to provide a comprehensive starting point for 
+data analysts by showing how to download the entire (or filtered) data from TSC.
+
+Other vignettes will be added for each commonly used analysis of TSC data or 
+workflow involving TSC data.
