@@ -119,7 +119,7 @@ mapview::mapview(tae_gj, popup="as_html", zcol="geolocation_capture_method")
 ```
 
 # Download all Taxon Occurrences from TSC
-We get Taxon ocurrences with their point representations from TSC through the 
+We get Taxon occurrences with their point representations from TSC through the 
 API endpoint [occ-taxon-points](https://tsc.dbca.wa.gov.au/api/1/occ-taxon-points/).
 
 Currently, all Fauna and Flora occurrences are georeferenced only with point 

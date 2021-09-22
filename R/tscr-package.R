@@ -9,7 +9,9 @@ NULL
 
 #' Silence R CMD CHECK warning: Use lifecycle somewhere in package
 #' @keywords internal
-lifecycle_warning_muffler <- function(){lifecycle::last_warnings()}
+lifecycle_warning_muffler <- function() {
+  lifecycle::last_warnings()
+}
 
 # CMD check silencer
 utils::globalVariables(

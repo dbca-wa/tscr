@@ -1,21 +1,23 @@
 {
-  "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
+  "@context": [
+    "https://doi.org/10.5063/schema/codemeta-2.0",
+    "http://schema.org"
+  ],
   "@type": "SoftwareSourceCode",
   "identifier": "tscr",
-  "description": "TSC is DBCA's Threatened Species and Communities Data Portal.\n  TSC provides access to its data through a RESTful API. \n  tscr provides helpers and working examples of getting data in and out of TSC's\n  API, as well as starting points for data visualisations and analyses of TSC \n  data.",
+  "description": "TSC is DBCA's Threatened Species and Communities Data Portal.\n  TSC provides programmatic access to its data through a RESTful API. \n  'tscr' provides helpers and working examples of getting data in and out of \n  TSC's API, as well as starting points for data visualisations and analyses of \n  TSC data.",
   "name": "tscr: Threatened Species and Communities Data Export and Analysis",
   "codeRepository": "https://github.com/dbca-wa/tscr",
   "relatedLink": "https://dbca-wa.github.io/tscr/",
   "issueTracker": "https://github.com/dbca-wa/tscr/issues/new/choose",
   "license": "https://spdx.org/licenses/MIT",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
-    "version": "4.0.0",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.0.0 (2020-04-24)",
+  "runtimePlatform": "R version 4.1.1 (2021-08-10)",
   "author": [
     {
       "@type": "Person",
@@ -65,6 +67,7 @@
       "@type": "SoftwareApplication",
       "identifier": "knitr",
       "name": "knitr",
+      "version": ">= 1.29",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -77,6 +80,7 @@
       "@type": "SoftwareApplication",
       "identifier": "rmarkdown",
       "name": "rmarkdown",
+      "version": ">= 2.3",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -89,6 +93,7 @@
       "@type": "SoftwareApplication",
       "identifier": "covr",
       "name": "covr",
+      "version": ">= 3.5.0",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -101,6 +106,7 @@
       "@type": "SoftwareApplication",
       "identifier": "geojsonio",
       "name": "geojsonio",
+      "version": ">= 0.9.2",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -113,6 +119,7 @@
       "@type": "SoftwareApplication",
       "identifier": "geojsonsf",
       "name": "geojsonsf",
+      "version": ">= 2.0.0",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -125,6 +132,7 @@
       "@type": "SoftwareApplication",
       "identifier": "mapview",
       "name": "mapview",
+      "version": ">= 2.7.8",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -132,6 +140,70 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=mapview"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "reactable",
+      "name": "reactable",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=reactable"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "styler",
+      "name": "styler",
+      "version": ">= 1.3.2",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=styler"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "lintr",
+      "name": "lintr",
+      "version": ">= 2.0.1",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=lintr"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "goodpractice",
+      "name": "goodpractice",
+      "version": ">= 1.0.2",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=goodpractice"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "devtools",
+      "name": "devtools",
+      "version": ">= 2.3.1",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=devtools"
     }
   ],
   "softwareRequirements": [
@@ -139,13 +211,13 @@
       "@type": "SoftwareApplication",
       "identifier": "R",
       "name": "R",
-      "version": ">= 3.6.0"
+      "version": ">= 4.1.0"
     },
     {
       "@type": "SoftwareApplication",
       "identifier": "lifecycle",
       "name": "lifecycle",
-      "version": ">= 0.1.0",
+      "version": ">= 1.0.0",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -171,7 +243,7 @@
       "@type": "SoftwareApplication",
       "identifier": "crayon",
       "name": "crayon",
-      "version": ">=\n        1.3.4",
+      "version": ">= 1.4.1",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -182,9 +254,22 @@
     },
     {
       "@type": "SoftwareApplication",
+      "identifier": "dplyr",
+      "name": "dplyr",
+      "version": ">= 1.0.7",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=dplyr"
+    },
+    {
+      "@type": "SoftwareApplication",
       "identifier": "glue",
       "name": "glue",
-      "version": ">= 1.4.1",
+      "version": ">= 1.4.2",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -197,7 +282,7 @@
       "@type": "SoftwareApplication",
       "identifier": "rlang",
       "name": "rlang",
-      "version": ">= 0.4.7",
+      "version": ">= 0.4.11",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -210,6 +295,7 @@
       "@type": "SoftwareApplication",
       "identifier": "httr",
       "name": "httr",
+      "version": ">= 1.4.2",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -222,6 +308,7 @@
       "@type": "SoftwareApplication",
       "identifier": "jsonlite",
       "name": "jsonlite",
+      "version": ">= 1.7.2",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -234,6 +321,7 @@
       "@type": "SoftwareApplication",
       "identifier": "magrittr",
       "name": "magrittr",
+      "version": ">= 2.0.1",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -246,6 +334,7 @@
       "@type": "SoftwareApplication",
       "identifier": "tibble",
       "name": "tibble",
+      "version": ">= 3.1.4",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -258,6 +347,7 @@
       "@type": "SoftwareApplication",
       "identifier": "tidyr",
       "name": "tidyr",
+      "version": ">= 1.1.3",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -270,6 +360,7 @@
       "@type": "SoftwareApplication",
       "identifier": "janitor",
       "name": "janitor",
+      "version": ">= 2.1.0",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -279,21 +370,15 @@
       "sameAs": "https://CRAN.R-project.org/package=janitor"
     }
   ],
-  "keywords": ["threatened", "species", "ecological-communities", "conservation-management", "data-access"],
-  "citation": [
-    {
-      "@type": "SoftwareSourceCode",
-      "author": [
-        {
-          "@type": "Person",
-          "givenName": ["Florian", "W."],
-          "familyName": "Mayer",
-          "email": "Florian.Mayer@dbca.wa.gov.au",
-          "@id": "https://orcid.org/0000-0003-4269-4242"
-        }
-      ],
-      "name": "tscr: Threatened Species and Communities Data Export and Analysis",
-      "description": "https://github.com/dbca-wa/tscr,\nhttps://dbca-wa.github.io/tscr/"
-    }
+  "releaseNotes": "https://github.com/dbca-wa/tscr/blob/master/NEWS.md",
+  "readme": "https://github.com/dbca-wa/tscr/blob/master/README.md",
+  "fileSize": "3798.236KB",
+  "contIntegration": "https://codecov.io/gh/dbca-wa/tscr?branch=master",
+  "keywords": [
+    "threatened",
+    "species",
+    "ecological-communities",
+    "conservation-management",
+    "data-access"
   ]
 }

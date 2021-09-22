@@ -18,6 +18,8 @@ hexSticker::sticker(
   # p_family = "knewave",
   p_color = darkred,
   h_fill = darkblue, h_color = darkred,
+  url = "dbca-wa.github.io/tscr",
+  u_size = 6, u_color = "#ffffff", u_x = 1.05, u_y = 0.1,
   white_around_sticker = T,
   filename = logo
 )

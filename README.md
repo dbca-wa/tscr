@@ -13,9 +13,10 @@ coverage](https://codecov.io/gh/dbca-wa/tscr/branch/master/graph/badge.svg)](htt
 issues](https://img.shields.io/github/issues/dbca-wa/tscr.svg?style=popout)](https://github.com/dbca-wa/tscr/issues)
 <!-- badges: end -->
 
-The goal of `tscr` is to provide access to TSC data, and to provide
-working examples of analysis and visualisation of TSC data to answer QA,
-ecological, and management questions.
+The goal of `tscr` is to provide read/write access to TSC data, and to
+provide working examples of analysis and visualisation of TSC data to
+answer QA, ecological, and management questions as well as working data
+ETL pipelines.
 
 ## For conservation managers and ecologists
 
@@ -24,18 +25,18 @@ ecological, or data QA questions answered with TSC data.
 
 Example questions (to be replaced with working examples):
 
-  - How many birds rose in conservation listing status in WA in the past
+-   How many birds rose in conservation listing status in WA in the past
     X years?
-  - Which conservation significant plants have been recorded in DBCA
+-   Which conservation significant plants have been recorded in DBCA
     District X?
-  - What is the predicted habitat for a taxon known under taxonomic name
+-   What is the predicted habitat for a taxon known under taxonomic name
     X?
-  - Generate a formatted PDF and a plain CSV spreadsheet of threatened
+-   Generate a formatted PDF and a plain CSV spreadsheet of threatened
     flora and fauna names in WA.
-  - Generate an interactive map of all accepted occurrences in area X.
-  - List conservation documents coming up for review within the next 6
+-   Generate an interactive map of all accepted occurrences in area X.
+-   List conservation documents coming up for review within the next 6
     months.
-  - List occurrences flagged for review.
+-   List occurrences flagged for review.
 
 Help us completing this list by filing new “Data export or analysis
 requests” [here](https://github.com/dbca-wa/tscr/issues/new/choose).
@@ -48,10 +49,10 @@ with your own credentials as outlined below.
 
 Use cases:
 
-  - Create a bulk data export into spreadsheet or GIS formats.
-  - Build your own analyses and reports to answer conservation
+-   Create a bulk data export into spreadsheet or GIS formats.
+-   Build your own analyses and reports to answer conservation
     management, ecological, or QA questions.
-  - ETL of bulk data from third parties (data returns from consultants)
+-   ETL of bulk data from third parties (data returns from consultants)
     into TSC.
 
 ### Installation and Setup
@@ -88,10 +89,10 @@ vignette("setup", package = "tscr")
 
 Found a bug in `tscr`, need a new `tscr` feature, or need a working
 example to generate a data product from TSC? Let us know
-[here](https://github.com/dbca-wa/tscr/issues/new/choose)\!
+[here](https://github.com/dbca-wa/tscr/issues/new/choose)!
 
 Want to chat about TSC? Join the [“TSC” group on DBCA’s
-Teams](https://teams.microsoft.com/_#/conversations/General?threadId=19:20412eea61c949e59460ece939a128cd@thread.tacv2&ctx=channel)\!
+Teams](https://teams.microsoft.com/_#/conversations/General?threadId=19:20412eea61c949e59460ece939a128cd@thread.tacv2&ctx=channel)!
 (You’ll need a DBCA account to access this group.)
 
 ### Release
@@ -113,7 +114,7 @@ devtools::document(roclets = c("rd", "collate", "namespace", "vignette"))
 spelling::spell_check_package()
 spelling::spell_check_files("README.Rmd", lang = "en_AU")
 spelling::update_wordlist()
-codemetar::write_codemeta("tscr")
+codemetar::write_codemeta()
 if (fs::file_info("README.md")$modification_time <
   fs::file_info("README.Rmd")$modification_time) {
   rmarkdown::render("README.Rmd", encoding = "UTF-8", clean = TRUE)
