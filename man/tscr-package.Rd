@@ -7,10 +7,10 @@
 \title{tscr: Threatened Species and Communities Data Export and Analysis}
 \description{
 TSC is DBCA's Threatened Species and Communities Data Portal.
-  TSC provides access to its data through a RESTful API. 
-  tscr provides helpers and working examples of getting data in and out of TSC's
-  API, as well as starting points for data visualisations and analyses of TSC 
-  data.
+  TSC provides programmatic access to its data through a RESTful API. 
+  'tscr' provides helpers and working examples of getting data in and out of 
+  TSC's API, as well as starting points for data visualisations and analyses of 
+  TSC data.
 }
 \seealso{
 Useful links:

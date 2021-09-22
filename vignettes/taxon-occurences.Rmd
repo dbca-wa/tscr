@@ -21,6 +21,8 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
+library(raster)
+library(leafem)
 library(tscr)
 ```
 
@@ -34,22 +36,86 @@ Currently, all Fauna and Flora occurrences have only points, not polygons.
 In future, Flora Populations can be captured as polygons representing the entire
 population, or a surveyed part of it.
 
-```{r, eval=F}
-areas <- tsc_GET("area", chunk_size = 100) %>% tsc_parse()
-# Areas as tibble
-head(areas) %>% knitr::kable()
+## Areas as table
+In this example, we download the full list of Areas, parse the data into a table,
+and display selected columns of the first few Areas.
 
+```{r areas}
+areas <- tsc_GET("area", chunk_size = 100) %>% tsc_parse()
+
+areas %>% 
+  head() %>% 
+  dplyr::select(name, area_type) %>% 
+  knitr::kable()
+```
+
+## Areas on a map
+
+In this example, we download Areas of type "Site", convert it to a spatial format
+(GeoJSON), and display it on a map. 
+
+See the [Areas API](https://tsc.dbca.wa.gov.au/api/1/area/) for other possible
+filters.
+
+See the [mapview](https://r-spatial.github.io/mapview/index.html) homepage for 
+map configuration options.
+
+
+```{r areas_gj, eval=T}
+areas_gj <- 
+  tsc_GET("area", 
+          query = list(area_type="Site"),
+          chunk_size = 100) %>% 
+  magrittr::extract2("data") %>%
+  geojsonio::as.json() %>%
+  geojsonsf::geojson_sf()
+
+mapview::mapview(areas_gj)
+```
+
+## Download Occurrences
+In this example, we download the point representation of Taxon occurrence records.
+
+We limit the result size to 10 records for demonstration purposes, but this
+method can also download the entire dataset if the parameter `max_records` is
+omitted.
+
+See the [TSC API](https://tsc.dbca.wa.gov.au/api/1/) for the full list of available
+endpoints. 
+
+We show here [Taxon Point Occurrences](https://tsc.dbca.wa.gov.au/api/1/occ-taxon-points/).
+Each field can serve as a filter via the query attribute.
+
+
+```{r get_tae}
 # Taxon occurrences with their Point representation
 tae_res <- tsc_GET("occ-taxon-points", max_records = 10) 
+```
 
-# Taxon occurrences as tibble
+## Occurrences as table
+We show some fields as an interactive table. The field `as_html` contains 
+rendered content which can be used as a map popup.
+
+```{r tae_tbl}
 tae <- tae_res %>% tsc_parse()
+
+tae %>% 
+  dplyr::select(label, encountered_on, geolocation_capture_method, as_html) %>% 
+  janitor::clean_names(case="sentence") %>% 
+  reactable::reactable(filterable=TRUE, sortable = TRUE, searchable = TRUE,
+                      defaultColDef = reactable::colDef(html=TRUE))
 head(tae) %>% knitr::kable()
-     
-# Taxon occurrences as GeoJSON SimpleFeatures for plotting
+```
+
+## Occurences on a map
+Taxon occurrences as GeoJSON SimpleFeatures for plotting.
+We use the field `as_html` as the popup and the geolocation capture method for
+grouping.
+```{r tae_map}
 tae_gj <- tae_res %>%
   magrittr::extract2("data") %>%
   geojsonio::as.json() %>%
   geojsonsf::geojson_sf()
-mapview::mapview(tae_gj)
+
+mapview::mapview(tae_gj, popup="as_html", zcol="geolocation_capture_method")
 ```
