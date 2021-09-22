@@ -118,9 +118,86 @@ tae_gj <- tae_res %>%
 mapview::mapview(tae_gj, popup="as_html", zcol="geolocation_capture_method")
 ```
 
-## Outlook
-This vignette will be expanded to provide a comprehensive starting point for 
-data analysts by showing how to download the entire (or filtered) data from TSC.
+# Download all Taxon Occurrences from TSC
+We get Taxon ocurrences with their point representations from TSC through the 
+API endpoint [occ-taxon-points](https://tsc.dbca.wa.gov.au/api/1/occ-taxon-points/).
 
-Other vignettes will be added for each commonly used analysis of TSC data or 
-workflow involving TSC data.
+Currently, all Fauna and Flora occurrences are georeferenced only with point 
+coordinates, not polygons.
+
+We then get TSC Areas and split them into DBCA Regions and Districts.
+Caveat: Regions and Districts to not comprehensively cover WA.
+
+Lastly, we get a list of taxonomic names from TSC to resolve taxon IDs from
+taxon occurrences to names.
+
+Occurrences are presented as `occ` with DBCA Region and District names (where
+applicable), plus taxonomic names.
+
+```{r download, eval=F}
+datafile <- here::here("data/tae.RData")
+
+tsc_tae <- tsc_GET("occ-taxon-points") # 137k records
+tsc_taxa <- tsc_GET("taxon") %>%
+    wastdr::wastd_parse() %>%
+    dplyr::mutate(name_id = name_id %>% as.character(), taxon = pk)
+tsc_areas <- tsc_GET("area") %>%
+      magrittr::extract2("features") %>%
+      geojsonio::as.json() %>%
+      geojsonsf::geojson_sf()
+save(tsc_tae, tsc_taxa, tsc_areas, file=datafile, compress="xz")
+```
+
+```{r munge, eval=F}
+if (fs::file_exists(datafile)) load(datafile)
+
+regions <- tsc_areas %>%
+  dplyr::filter(area_type == "Region") %>%
+  dplyr::transmute(region_id = pk, region_name = name)
+
+districts <- tsc_areas %>%
+  dplyr::filter(area_type == "District") %>%
+  dplyr::transmute(district_id = pk, district_name = name)
+
+occ <- tsc_tae %>%
+  magrittr::extract2("features") %>%
+  geojsonio::as.json() %>%
+  geojsonsf::geojson_sf() %>% 
+  sf::st_join(regions) %>% 
+  sf::st_join(districts) %>% 
+  dplyr::left_join(tsc_taxa, by="taxon")
+```
+
+# Visualise occurrences
+
+## Species occurrences by DBCA Region
+
+```{r occ_by_reg, eval=FALSE}
+occ_by_region <- occ %>% 
+    dplyr::group_by(region_name, taxonomic_name) %>% 
+    dplyr::tally()  %>% 
+    wastdr::sf_as_tbl() %>% 
+    tidyr::pivot_wider(
+        id_cols=taxonomic_name,
+        names_from = region_name,
+        values_from = n,
+        values_fill = NA
+    )
+occ_by_region %>% reactable::reactable(sortable = T, filterable = T)
+```
+
+## Species occurrences by DBCA District
+
+```{r occ_by_dist, eval=FALSE}
+occ_by_district <- occ %>% 
+    dplyr::group_by(district_name, taxonomic_name) %>% 
+    dplyr::tally()  %>% 
+    wastdr::sf_as_tbl() %>% 
+    tidyr::pivot_wider(
+        id_cols=taxonomic_name,
+        names_from = district_name,
+        values_from = n,
+        values_fill = NA
+    )
+occ_by_district %>% reactable::reactable(sortable = T, filterable = T)
+```
