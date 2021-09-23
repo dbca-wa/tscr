@@ -9,10 +9,3 @@
 #' @importFrom magrittr %>%
 #' @usage lhs \%>\% rhs
 NULL
-
-#' sf dependency
-#' @md
-#' @name sfdeps
-#' @keywords internal
-#' @import sf
-NULL
