@@ -127,8 +127,8 @@ jobs:
       - name: "[Custom block] [Stage] After Success 1 (git, install)"
         if: matrix.config.pkgdown == 'true'
         run: |
-          git config --global user.name ${{secrets.GH_USER}}
-          git config --global user.email ${{secrets.GH_EMAIL}}
+          git config --local user.name "$GITHUB_ACTOR"
+          git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
           R CMD INSTALL .
           Rscript -e "install.packages('pkgdown')"
           Rscript -e "tic::after_success()"
