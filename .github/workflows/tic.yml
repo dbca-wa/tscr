@@ -124,7 +124,7 @@ jobs:
       - name: "[Stage] Script"
         run: Rscript -e 'tic::script()'
 
-        - name: "[Custom block] [Stage] After Success 1 (git, install)"
+      - name: "[Custom block] [Stage] After Success 1 (git, install)"
         if: matrix.config.pkgdown == 'true'
         run: |
           git config --global user.name ${{secrets.GH_USER}}
