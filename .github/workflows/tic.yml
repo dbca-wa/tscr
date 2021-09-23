@@ -124,9 +124,20 @@ jobs:
       - name: "[Stage] Script"
         run: Rscript -e 'tic::script()'
 
-      - name: "[Stage] After Success"
-        if: matrix.config.os == 'ubuntu-latest' && matrix.config.r == 'release'
-        run: Rscript -e "tic::after_success()" -e "tic::do_pkgdown(force = TRUE)"
+        - name: "[Custom block] [Stage] After Success 1 (git, install)"
+        if: matrix.config.pkgdown == 'true'
+        run: |
+          git config --global user.name ${{secrets.GH_USER}}
+          git config --global user.email ${{secrets.GH_EMAIL}}
+          R CMD INSTALL .
+          Rscript -e "install.packages('pkgdown')"
+          Rscript -e "tic::after_success()"
+
+      - name: "[Custom block] [Stage] After Success 2 (codecov, pkgdown)"
+        if: matrix.config.pkgdown == 'true'
+        run: |
+          pkgdown::deploy_to_branch(new_process=FALSE, force=TRUE)
+        shell: Rscript {0}
 
       - name: "[Stage] Upload R CMD check artifacts"
         if: failure()
