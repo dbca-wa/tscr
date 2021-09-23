@@ -10,7 +10,7 @@
 handle_http_status <- function(response,
                                verbose = tscr::get_tsc_verbose()) {
   if (response$status_code == 401) {
-    wastdr_msg_warn(
+    tsc_msg_warn(
       glue::glue(
         "Authorization failed.\n",
         "Run wastdr::wastdr_setup(api_token='Token XXX').\n",
@@ -26,12 +26,12 @@ handle_http_status <- function(response,
   if (httr::http_error(response)) {
     "WAStD API request failed with [{httr::status_code(response)}]" %>%
       glue::glue() %>%
-      wastdr::wastdr_msg_warn(verbose = verbose)
+      tsc_msg_warn(verbose = verbose)
   }
 
 
   if (httr::http_type(response) != "application/json") {
-    wastdr_msg_warn(
+    tsc_msg_warn(
       glue::glue(
         "API did not return JSON.\n",
         "Is {response$url} a valid endpoint?"
