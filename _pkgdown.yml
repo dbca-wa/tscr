@@ -1,3 +1,5 @@
+url: https://dbca-wa.github.io/tscr
+
 reference:
 - title: API
   desc: Top level functions to interact with the API.
@@ -15,6 +17,7 @@ reference:
   desc: Helper methods used by other tscr functions.
   contents:
   - has_concept("helpers")
+
 articles:
 - title: Setup
   desc: Configure tscr
@@ -34,6 +37,7 @@ articles:
   desc: Import data into TSC
   navbar: Import
   contents:
+
 authors:
   DBCA:
   html: "<img src='man/figures/dbca_bcs.png' width='150' alt='DBCA'/>"

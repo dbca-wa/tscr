@@ -1,7 +1,7 @@
 Package: tscr
 Type: Package
-Title: Threatened Species and Communities Data Export and Analysis
-Version: 0.1.1
+Title: Threatened Species and Communities Data ETL and Analysis
+Version: 0.1.2
 Authors@R: 
     c(person(given = c("Florian", "W."),
              family = "Mayer",
@@ -16,8 +16,7 @@ Description: TSC is DBCA's Threatened Species and Communities Data Portal.
   'tscr' provides helpers and working examples of getting data in and out of 
   TSC's API, as well as starting points for data visualisations and analyses of 
   TSC data.
-URL: https://github.com/dbca-wa/tscr,
-  https://dbca-wa.github.io/tscr/
+URL: https://github.com/dbca-wa/tscr, https://dbca-wa.github.io/tscr/
 BugReports: https://github.com/dbca-wa/tscr/issues/new/choose
 License: MIT + file LICENSE
 Language: en_AU
