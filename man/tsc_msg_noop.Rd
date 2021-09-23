@@ -2,9 +2,9 @@
 % Please edit documentation in R/tsc_msg.R
 \name{tsc_msg_noop}
 \alias{tsc_msg_noop}
-\title{Print a green noop message with a filled circle symbol.}
+\title{Print a green noop message with a filled circle symbol}
 \usage{
-tsc_msg_noop(message)
+tsc_msg_noop(message, verbose = tscr::get_tsc_verbose())
 }
 \arguments{
 \item{message}{(chr) A message to print}
@@ -18,7 +18,6 @@ tsc_msg_noop("This is a noop message.")
 \seealso{
 Other helpers: 
 \code{\link{get_more}()},
-\code{\link{handle_http_status}()},
 \code{\link{tsc_msg_abort}()},
 \code{\link{tsc_msg_info}()},
 \code{\link{tsc_msg_success}()},

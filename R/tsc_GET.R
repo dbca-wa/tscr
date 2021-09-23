@@ -56,9 +56,13 @@ tsc_GET <- function(serializer,
   auth <- httr::add_headers(c(Authorization = api_token))
 
   # First batch of results and error handling
-  if (verbose == TRUE) tsc_msg_info(glue::glue("Fetching {url}"))
-  res <- httr::GET(url, auth, ua, query = query) %>%
-    handle_http_status()
+  "Fetching {url}" %>%
+    glue::glue() %>%
+    tsc_msg_info(verbose = verbose)
+
+  res <- httr::GET(url, auth, ua, query = query)
+
+  handle_http_status(res, verbose = verbose)
 
   res_parsed <- res %>%
     httr::content(as = "text", encoding = "UTF-8") %>%
@@ -117,7 +121,9 @@ tsc_GET <- function(serializer,
     }
   }
 
-  if (verbose == TRUE) tsc_msg_success(glue::glue("Done fetching {res$url}"))
+  "Done fetching {res$url}" %>%
+    glue::glue() %>%
+    tsc_msg_success(verbose = verbose)
 
   structure(
     list(

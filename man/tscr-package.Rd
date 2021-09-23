@@ -4,7 +4,7 @@
 \name{tscr-package}
 \alias{tscr}
 \alias{tscr-package}
-\title{tscr: Threatened Species and Communities Data Export and Analysis}
+\title{tscr: Threatened Species and Communities Data ETL and Analysis}
 \description{
 TSC is DBCA's Threatened Species and Communities Data Portal.
   TSC provides programmatic access to its data through a RESTful API. 

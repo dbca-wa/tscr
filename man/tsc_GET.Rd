@@ -68,6 +68,7 @@ area_records <- tsc_GET("area")
 }
 \seealso{
 Other api: 
+\code{\link{handle_http_status}()},
 \code{\link{print.tsc_api_response}()},
 \code{\link{tsc_parse}()}
 }

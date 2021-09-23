@@ -2,9 +2,9 @@
 % Please edit documentation in R/tsc_msg.R
 \name{tsc_msg_info}
 \alias{tsc_msg_info}
-\title{Print a blue info message with an info symbol.}
+\title{Print a blue info message with an info symbol}
 \usage{
-tsc_msg_info(message)
+tsc_msg_info(message, verbose = tscr::get_tsc_verbose())
 }
 \arguments{
 \item{message}{(chr) A message to print}
@@ -18,7 +18,6 @@ tsc_msg_info("This is an info message.")
 \seealso{
 Other helpers: 
 \code{\link{get_more}()},
-\code{\link{handle_http_status}()},
 \code{\link{tsc_msg_abort}()},
 \code{\link{tsc_msg_noop}()},
 \code{\link{tsc_msg_success}()},

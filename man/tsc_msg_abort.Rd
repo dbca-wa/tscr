@@ -2,7 +2,7 @@
 % Please edit documentation in R/tsc_msg.R
 \name{tsc_msg_abort}
 \alias{tsc_msg_abort}
-\title{rlang::abort() with a red error message with a cross symbol.}
+\title{rlang::abort() with a red error message with a cross symbol}
 \usage{
 tsc_msg_abort(message)
 }
@@ -20,7 +20,6 @@ tsc_msg_abort("This is an error, abort.")
 \seealso{
 Other helpers: 
 \code{\link{get_more}()},
-\code{\link{handle_http_status}()},
 \code{\link{tsc_msg_info}()},
 \code{\link{tsc_msg_noop}()},
 \code{\link{tsc_msg_success}()},

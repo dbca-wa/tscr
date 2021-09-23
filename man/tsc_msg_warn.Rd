@@ -2,9 +2,9 @@
 % Please edit documentation in R/tsc_msg.R
 \name{tsc_msg_warn}
 \alias{tsc_msg_warn}
-\title{rlang::warn() with a yellow warning message with a warning symbol.}
+\title{rlang::warn() with a yellow warning message with a warning symbol}
 \usage{
-tsc_msg_warn(message)
+tsc_msg_warn(message, verbose = tscr::get_tsc_verbose())
 }
 \arguments{
 \item{message}{(chr) A message to print}
@@ -20,7 +20,6 @@ tsc_msg_warn("This is a warning.")
 \seealso{
 Other helpers: 
 \code{\link{get_more}()},
-\code{\link{handle_http_status}()},
 \code{\link{tsc_msg_abort}()},
 \code{\link{tsc_msg_info}()},
 \code{\link{tsc_msg_noop}()},

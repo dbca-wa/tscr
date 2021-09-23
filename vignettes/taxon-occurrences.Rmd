@@ -97,12 +97,12 @@ rendered content which can be used as a map popup.
 ```{r tae_tbl}
 tae <- tae_res %>% tsc_parse()
 
+# head(tae) %>% knitr::kable()
 tae %>% 
   dplyr::select(label, encountered_on, geolocation_capture_method, as_html) %>% 
   janitor::clean_names(case="sentence") %>% 
   reactable::reactable(filterable=TRUE, sortable = TRUE, searchable = TRUE,
                       defaultColDef = reactable::colDef(html=TRUE))
-head(tae) %>% knitr::kable()
 ```
 
 ## Occurrences on a map

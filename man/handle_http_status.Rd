@@ -4,26 +4,22 @@
 \alias{handle_http_status}
 \title{Emit a specific warning messages depending on HTTP status}
 \usage{
-handle_http_status(response)
+handle_http_status(response, verbose = tscr::get_tsc_verbose())
 }
 \arguments{
 \item{response}{An HTTP response.}
-}
-\value{
-The input HTTP response.
+
+\item{verbose}{Whether to show verbose messages.
+Default: \code{\link{get_tsc_verbose}}.}
 }
 \description{
 Status 401: Instruct how to authenticate.
 Status http_error: warn and show status.
 }
 \seealso{
-Other helpers: 
-\code{\link{get_more}()},
-\code{\link{tsc_msg_abort}()},
-\code{\link{tsc_msg_info}()},
-\code{\link{tsc_msg_noop}()},
-\code{\link{tsc_msg_success}()},
-\code{\link{tsc_msg_warn}()},
-\code{\link{tsc_online}()}
+Other api: 
+\code{\link{print.tsc_api_response}()},
+\code{\link{tsc_GET}()},
+\code{\link{tsc_parse}()}
 }
-\concept{helpers}
+\concept{api}

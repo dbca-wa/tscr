@@ -2,9 +2,9 @@
 % Please edit documentation in R/tsc_msg.R
 \name{tsc_msg_success}
 \alias{tsc_msg_success}
-\title{Print a green success message with a tick symbol.}
+\title{Print a green success message with a tick symbol}
 \usage{
-tsc_msg_success(message)
+tsc_msg_success(message, verbose = tscr::get_tsc_verbose())
 }
 \arguments{
 \item{message}{(chr) A message to print}
@@ -18,7 +18,6 @@ tsc_msg_success("This is a success message.")
 \seealso{
 Other helpers: 
 \code{\link{get_more}()},
-\code{\link{handle_http_status}()},
 \code{\link{tsc_msg_abort}()},
 \code{\link{tsc_msg_info}()},
 \code{\link{tsc_msg_noop}()},
