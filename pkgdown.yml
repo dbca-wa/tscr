@@ -1,0 +1,8 @@
+pandoc: 2.7.3
+pkgdown: 1.6.1
+pkgdown_sha: ~
+articles:
+  setup: setup.html
+  taxon-occurrences: taxon-occurrences.html
+last_built: 2021-09-23T03:40Z
+
