@@ -4,5 +4,8 @@ pkgdown_sha: ~
 articles:
   setup: setup.html
   taxon-occurrences: taxon-occurrences.html
-last_built: 2021-09-23T03:40Z
+last_built: 2021-09-23T04:27Z
+urls:
+  reference: https://dbca-wa.github.io/tscr/reference
+  article: https://dbca-wa.github.io/tscr/articles
 

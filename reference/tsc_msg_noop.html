@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Print a green noop message with a filled circle symbol. — tsc_msg_noop • tscr</title>
+<title>Print a green noop message with a filled circle symbol — tsc_msg_noop • tscr</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="Print a green noop message with a filled circle symbol. — tsc_msg_noop" />
+<meta property="og:title" content="Print a green noop message with a filled circle symbol — tsc_msg_noop" />
 <meta property="og:description" content="" />
 
 
@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">tscr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
       </span>
     </div>
 
@@ -134,7 +134,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Print a green noop message with a filled circle symbol.</h1>
+    <h1>Print a green noop message with a filled circle symbol</h1>
     <small class="dont-index">Source: <a href='https://github.com/dbca-wa/tscr/blob/master/R/tsc_msg.R'><code>R/tsc_msg.R</code></a></small>
     <div class="hidden name"><code>tsc_msg_noop.Rd</code></div>
     </div>
@@ -143,7 +143,7 @@
     <p><a href='https://lifecycle.r-lib.org/articles/stages.html#stable'><img src='figures/lifecycle-stable.svg' alt='[Stable]' /></a></p>
     </div>
 
-    <pre class="usage"><span class='fu'>tsc_msg_noop</span><span class='op'>(</span><span class='va'>message</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>tsc_msg_noop</span><span class='op'>(</span><span class='va'>message</span>, verbose <span class='op'>=</span> <span class='fu'>tscr</span><span class='fu'>::</span><span class='fu'><a href='tsc_settings.html'>get_tsc_verbose</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -158,7 +158,6 @@
 
     <div class='dont-index'><p>Other helpers: 
 <code><a href='get_more.html'>get_more</a>()</code>,
-<code><a href='handle_http_status.html'>handle_http_status</a>()</code>,
 <code><a href='tsc_msg_abort.html'>tsc_msg_abort</a>()</code>,
 <code><a href='tsc_msg_info.html'>tsc_msg_info</a>()</code>,
 <code><a href='tsc_msg_success.html'>tsc_msg_success</a>()</code>,
@@ -167,7 +166,7 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>tsc_msg_noop</span><span class='op'>(</span><span class='st'>"This is a noop message."</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'><span style='color: #00BB00;'>◉ This is a noop message.</span></span></div></pre>
+</div><div class='output co'>#&gt; NULL</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
