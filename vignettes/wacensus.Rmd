@@ -2,12 +2,13 @@
 title: "Importing taxonomic names from WACensus"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Importing taxonomic names from WACensus}
+  %\VignetteIndexEntry{wacensus}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
 ```{r, include = FALSE}
+options(rmarkdown.html_vignette.check_title = FALSE)
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"

@@ -52,6 +52,7 @@ credentials as outlined below.
 
 Use cases:
 
+* Update TSC taxonomy from WACensus: [`vignette("wacensus", package="tscr")`](https://dbca-wa.github.io/tscr/articles/wacensus.html)) 
 * Create a bulk data export into spreadsheet or GIS formats.
 * Build your own analyses and reports to answer conservation management, 
   ecological, or QA questions.
