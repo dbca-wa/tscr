@@ -8,6 +8,9 @@ tsc_msg_noop(message, verbose = tscr::get_tsc_verbose())
 }
 \arguments{
 \item{message}{(chr) A message to print}
+
+\item{verbose}{Whether to show verbose messages.
+Default: \code{\link{get_tsc_verbose}}.}
 }
 \description{
 \lifecycle{stable}

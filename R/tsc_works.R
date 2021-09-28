@@ -6,10 +6,9 @@
 #' @family helpers
 #' @export
 tsc_works <- function(api_url = get_tsc_api_url(),
-                        api_token = get_tsc_api_token(),
-                        api_un = get_tsc_api_un(),
-                        api_pw = get_tsc_api_pw()) {
-  if (is.null(api_token)) tsc_msg_abort("API token not set, see vignette setup")
+                      api_token = get_tsc_api_token()) {
+  if (is.null(api_token)) "API token not set, see vignette setup" %>%
+    tsc_msg_abort()
   auth <- httr::add_headers(c(Authorization = api_token))
   res <- httr::GET(api_url, auth)
   return(res$status_code == 200)

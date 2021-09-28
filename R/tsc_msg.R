@@ -3,6 +3,7 @@
 #' \lifecycle{stable}
 #'
 #' @param message (chr) A message to print
+#' @template param-verbose
 #' @return NULL
 #' @export
 #' @family helpers
@@ -22,6 +23,7 @@ tsc_msg_info <- function(message,
 #' \lifecycle{stable}
 #'
 #' @param message (chr) A message to print
+#' @template param-verbose
 #' @return NULL
 #' @export
 #' @family helpers
@@ -42,6 +44,7 @@ tsc_msg_success <- function(message,
 #' \lifecycle{stable}
 #'
 #' @param message (chr) A message to print
+#' @template param-verbose
 #' @return NULL
 #' @export
 #' @family helpers
@@ -62,6 +65,7 @@ tsc_msg_noop <- function(message,
 #' \lifecycle{stable}
 #'
 #' @param message (chr) A message to print
+#' @template param-verbose
 #' @return NULL
 #' @export
 #' @family helpers

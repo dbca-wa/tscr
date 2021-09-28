@@ -4,12 +4,7 @@
 \alias{tsc_works}
 \title{Check whether API token is set and TSC is online}
 \usage{
-tsc_works(
-  api_url = get_tsc_api_url(),
-  api_token = get_tsc_api_token(),
-  api_un = get_tsc_api_un(),
-  api_pw = get_tsc_api_pw()
-)
+tsc_works(api_url = get_tsc_api_url(), api_token = get_tsc_api_token())
 }
 \arguments{
 \item{api_url}{(character) The TSC API URL,
