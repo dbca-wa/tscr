@@ -1,0 +1,45 @@
+---
+title: "Importing taxonomic names from WACensus"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Importing taxonomic names from WACensus}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+The two step process of updating TSC's internal taxa is outlined below. 
+`gjprod` is defined here as a shortcut to `tscr::upsert_geojson` for convenience.
+More explanations to come.
+
+```{r setup}
+library(tscr)
+gjprod <- function(data, ser) upsert_geojson(
+  data, serializer = ser, api_url = get_tsc_api_url(), chunksize = 1000)
+```
+
+
+## Import a copy of WACensus into TSC
+Run against local, UAT or production TSC instance. 
+Adjust chunksize down when getting "504 gateway timeouts".
+
+```{r etl, eval=F}
+"public:herbie_hbvsupra_public" %>% gs_getWFS() %>% gjprod("supra")
+"public:herbie_hbvgroups_public" %>% gs_getWFS() %>% gjprod("groups")
+"public:herbie_hbvnames_public" %>% gs_getWFS() %>% gjprod("names")
+"public:herbie_hbvfamilies_public" %>% gs_getWFS() %>% gjprod("families")
+"public:herbie_hbvgenera_public" %>% gs_getWFS() %>% gjprod("genera")
+"public:herbie_hbvspecies_public" %>% gs_getWFS() %>% gjprod("species")
+"public:herbie_hbvxrefs_public" %>% gs_getWFS() %>% gjprod("xrefs")
+"public:herbie_hbtparents_public" %>% gs_getWFS() %>% gjprod("parents")
+"public:herbie_hbvvernaculars_public" %>% gs_getWFS() %>% gjprod("vernaculars")
+```
+
+## Rebuild TSC taxonomy
+TSC > Curators > Update Taxon Names. After a few minutes, TSC Taxa will be updated.

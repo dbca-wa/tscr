@@ -1,3 +1,18 @@
+# tscr (development version)
+## Major fixes
+## Minor fixes
+## Documentation
+## Data
+
+# tscr 0.2.0
+## Major fixes
+* Add `tsc_POST` and helpers to interact with GeoServer WFS (KMI WACensus endpoints)
+## Minor fixes
+## Documentation
+* Add vignette "wacensus": Update TSC Taxa from WACensus
+## Data
+
+
 # tscr 0.1.0
 This is the start of `tscr`, an R client for 
 [TSC](https://tsc.dbca.wa.gov.au/)'s [API](https://tsc.dbca.wa.gov.au/api/1/).

@@ -1,7 +1,7 @@
 Package: tscr
 Type: Package
 Title: Threatened Species and Communities Data ETL and Analysis
-Version: 0.1.2
+Version: 0.2.0
 Authors@R: 
     c(person(given = c("Florian", "W."),
              family = "Mayer",

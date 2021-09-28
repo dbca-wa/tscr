@@ -22,6 +22,7 @@ Other helpers:
 \code{\link{tsc_msg_info}()},
 \code{\link{tsc_msg_success}()},
 \code{\link{tsc_msg_warn}()},
-\code{\link{tsc_online}()}
+\code{\link{tsc_online}()},
+\code{\link{tsc_works}()}
 }
 \concept{helpers}
