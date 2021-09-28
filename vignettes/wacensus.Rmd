@@ -15,16 +15,22 @@ knitr::opts_chunk$set(
 )
 ```
 
-The two step process of updating TSC's internal taxa is outlined below. 
+# Context
+
+* WACensus, an Oracle database, is the point of truth for WA taxonomic names at DBCA.
+* KMI publishes a few WACensus views as GeoServer layers.
+* TSC maintains a copy of those WACensus views and rebuilds its internal taxonomy
+  from this copy of WACensus data.
+
+This workbook shows how to update TSC from KMI's WACensus views.
+
 `gjprod` is defined here as a shortcut to `tscr::upsert_geojson` for convenience.
-More explanations to come.
 
 ```{r setup}
 library(tscr)
 gjprod <- function(data, ser) upsert_geojson(
   data, serializer = ser, api_url = get_tsc_api_url(), chunksize = 1000)
 ```
-
 
 ## Import a copy of WACensus into TSC
 Run against local, UAT or production TSC instance. 
@@ -44,3 +50,40 @@ Adjust chunksize down when getting "504 gateway timeouts".
 
 ## Rebuild TSC taxonomy
 TSC > Curators > Update Taxon Names. After a few minutes, TSC Taxa will be updated.
+
+
+# Further examples
+## Update one Taxon
+This section demonstrates how to update a single taxon in TSC.
+
+```{r get_single}
+hbv_groups <- gs_getWFS(layer_name = "public:herbie_hbvgroups_public")
+groups_props <- purrr::map(hbv_groups[["features"]], "properties")
+groups_props[[1]]
+```
+This is the format of the data expected by `tsc_POST`.
+
+```{r upload_single, eval=FALSE}
+tsc_POST(groups_props[[1]], serializer = "group")
+```
+
+Similarly, we could extract the list of taxonomic names from the KMS GeoServer
+layer `public:herbie_hbvnames_public`, which represents the WACensus view `hbvnames`.
+
+We retain the fields used in TSC.
+
+```{r list_names}
+wace_names <- "public:herbie_hbvnames_public" %>% 
+  gs_getWFS() %>% 
+  magrittr::extract2("features") %>% 
+  {tibble::tibble(
+    name_id = purrr::map(., c("properties", "name_id")) %>% as.integer(),
+    name = purrr::map(., c("properties", "name")) %>% as.character(),
+    author = purrr::map(., c("properties", "author")) %>% as.character(),
+    reference = purrr::map(., c("properties", "reference")) %>% as.character(),
+    rank_name = purrr::map(., c("properties", "rank_name")) %>% as.character()
+  )}
+
+wace_names %>% 
+  reactable::reactable(filterable = TRUE, sortable = TRUE, searchable = TRUE)
+```
