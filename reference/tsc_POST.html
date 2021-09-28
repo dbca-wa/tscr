@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Check whether API token is set and TSC is online — tsc_online • tscr</title>
+<title>Send a POST request to TSC's API — tsc_POST • tscr</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="Check whether API token is set and TSC is online — tsc_online" />
+<meta property="og:title" content="Send a POST request to TSC's API — tsc_POST" />
 <meta property="og:description" content="" />
 
 
@@ -134,20 +134,48 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Check whether API token is set and TSC is online</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dbca-wa/tscr/blob/master/R/tsc_online.R'><code>R/tsc_online.R</code></a></small>
-    <div class="hidden name"><code>tsc_online.Rd</code></div>
+    <h1>Send a POST request to TSC's API</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dbca-wa/tscr/blob/master/R/tsc_POST.R'><code>R/tsc_POST.R</code></a></small>
+    <div class="hidden name"><code>tsc_POST.Rd</code></div>
     </div>
 
     <div class="ref-description">
     <p><a href='https://lifecycle.r-lib.org/articles/stages.html#stable'><img src='figures/lifecycle-stable.svg' alt='[Stable]' /></a></p>
     </div>
 
-    <pre class="usage"><span class='fu'>tsc_online</span><span class='op'>(</span>api_url <span class='op'>=</span> <span class='fu'><a href='tsc_settings.html'>get_tsc_api_url</a></span><span class='op'>(</span><span class='op'>)</span>, api_token <span class='op'>=</span> <span class='fu'><a href='tsc_settings.html'>get_tsc_api_token</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>tsc_POST</span><span class='op'>(</span>
+  <span class='va'>data</span>,
+  <span class='va'>serializer</span>,
+  query <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>format <span class='op'>=</span> <span class='st'>"json"</span><span class='op'>)</span>,
+  encode <span class='op'>=</span> <span class='st'>"json"</span>,
+  api_url <span class='op'>=</span> <span class='fu'><a href='tsc_settings.html'>get_tsc_api_url</a></span><span class='op'>(</span><span class='op'>)</span>,
+  api_token <span class='op'>=</span> <span class='fu'><a href='tsc_settings.html'>get_tsc_api_token</a></span><span class='op'>(</span><span class='op'>)</span>,
+  verbose <span class='op'>=</span> <span class='fu'><a href='tsc_settings.html'>get_tsc_verbose</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>data</th>
+      <td><p>(JSON) A list of lists (JSON) to post to TSC.</p></td>
+    </tr>
+    <tr>
+      <th>serializer</th>
+      <td><p>(character) TSC API serializer name (required)
+Possible values see <code>https://tsc.dbca.wa.gov.au/api/1/</code></p></td>
+    </tr>
+    <tr>
+      <th>query</th>
+      <td><p>(list) A list of POST parameters,
+default: <code><a href='https://rdrr.io/r/base/list.html'>list(format="json")</a></code>.</p></td>
+    </tr>
+    <tr>
+      <th>encode</th>
+      <td><p>The parameter <code>encode</code> for <code>\link{httr::POST}</code>,
+default: "json".
+Other options: <code><a href='https://rdrr.io/r/base/c.html'>c("multipart", "form", "json", "raw")</a></code>.</p></td>
+    </tr>
     <tr>
       <th>api_url</th>
       <td><p>(character) The TSC API URL,
@@ -158,19 +186,42 @@ default <code><a href='tsc_settings.html'>get_tsc_api_url</a></code>, see <code>
       <td><p>(character) The TSC API token,
 default <code><a href='tsc_settings.html'>get_tsc_api_token</a></code>, see <code><a href='tsc_setup.html'>tsc_setup</a></code></p></td>
     </tr>
+    <tr>
+      <th>verbose</th>
+      <td><p>Whether to show verbose messages.
+Default: <code><a href='tsc_settings.html'>get_tsc_verbose</a></code>.</p></td>
+    </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>An S3 object of class 'tsc_api_response' containing:</p>
+<p>data: The parsed response content</p>
+<p>serializer: The called serializer, e.g. 'supra'</p>
+<p>url: The called URL</p>
+<p>date: The timestamp of the request</p>
+<p>status_code: The HTTP status code of the request</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other helpers: 
-<code><a href='get_more.html'>get_more</a>()</code>,
-<code><a href='tsc_msg_abort.html'>tsc_msg_abort</a>()</code>,
-<code><a href='tsc_msg_info.html'>tsc_msg_info</a>()</code>,
-<code><a href='tsc_msg_noop.html'>tsc_msg_noop</a>()</code>,
-<code><a href='tsc_msg_success.html'>tsc_msg_success</a>()</code>,
-<code><a href='tsc_msg_warn.html'>tsc_msg_warn</a>()</code>,
-<code><a href='tsc_works.html'>tsc_works</a>()</code></p></div>
+    <div class='dont-index'><p>Other api: 
+<code><a href='handle_http_status.html'>handle_http_status</a>()</code>,
+<code><a href='print.tsc_api_response.html'>print.tsc_api_response</a>()</code>,
+<code><a href='tsc_GET.html'>tsc_GET</a>()</code>,
+<code><a href='tsc_parse.html'>tsc_parse</a>()</code></p></div>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='co'># One by one</span>
+<span class='va'>gj</span> <span class='op'>&lt;-</span> <span class='st'>"public:herbie_hbvnames_public"</span> <span class='op'>%&gt;%</span> <span class='fu'>kmi_getFeature</span><span class='op'>(</span><span class='op'>)</span>
+<span class='va'>props</span> <span class='op'>&lt;-</span> <span class='fu'>purrr</span><span class='fu'>::</span><span class='fu'><a href='https://purrr.tidyverse.org/reference/map.html'>map</a></span><span class='op'>(</span><span class='va'>gj</span><span class='op'>[[</span><span class='st'>"features"</span><span class='op'>]</span><span class='op'>]</span>, <span class='st'>"properties"</span><span class='op'>)</span>
+<span class='fu'>tsc_POST</span><span class='op'>(</span><span class='va'>props</span><span class='op'>[[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>]</span>, serializer <span class='op'>=</span> <span class='st'>"names"</span><span class='op'>)</span>
+
+<span class='co'># All in batch</span>
+<span class='st'>"public:herbie_hbvnames_public"</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='gs_getWFS.html'>gs_getWFS</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='upsert_geojson.html'>upsert_geojson</a></span><span class='op'>(</span>serializer <span class='op'>=</span> <span class='st'>"names"</span>, verbose <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

@@ -7,6 +7,9 @@
     <loc>https://dbca-wa.github.io/tscr/reference/get_more.html</loc>
   </url>
   <url>
+    <loc>https://dbca-wa.github.io/tscr/reference/gs_getWFS.html</loc>
+  </url>
+  <url>
     <loc>https://dbca-wa.github.io/tscr/reference/handle_http_status.html</loc>
   </url>
   <url>
@@ -20,6 +23,9 @@
   </url>
   <url>
     <loc>https://dbca-wa.github.io/tscr/reference/tsc_GET.html</loc>
+  </url>
+  <url>
+    <loc>https://dbca-wa.github.io/tscr/reference/tsc_POST.html</loc>
   </url>
   <url>
     <loc>https://dbca-wa.github.io/tscr/reference/tsc_msg_abort.html</loc>
@@ -49,12 +55,21 @@
     <loc>https://dbca-wa.github.io/tscr/reference/tsc_setup.html</loc>
   </url>
   <url>
+    <loc>https://dbca-wa.github.io/tscr/reference/tsc_works.html</loc>
+  </url>
+  <url>
     <loc>https://dbca-wa.github.io/tscr/reference/tscr-package.html</loc>
+  </url>
+  <url>
+    <loc>https://dbca-wa.github.io/tscr/reference/upsert_geojson.html</loc>
   </url>
   <url>
     <loc>https://dbca-wa.github.io/tscr/articles/setup.html</loc>
   </url>
   <url>
     <loc>https://dbca-wa.github.io/tscr/articles/taxon-occurrences.html</loc>
+  </url>
+  <url>
+    <loc>https://dbca-wa.github.io/tscr/articles/wacensus.html</loc>
   </url>
 </urlset>
