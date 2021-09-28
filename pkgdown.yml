@@ -5,7 +5,7 @@ articles:
   setup: setup.html
   taxon-occurrences: taxon-occurrences.html
   wacensus: wacensus.html
-last_built: 2021-09-28T01:11Z
+last_built: 2021-09-28T01:19Z
 urls:
   reference: https://dbca-wa.github.io/tscr/reference
   article: https://dbca-wa.github.io/tscr/articles
