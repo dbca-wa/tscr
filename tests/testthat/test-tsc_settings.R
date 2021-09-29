@@ -86,7 +86,8 @@ test_that("tsc_setup warns about unset API tokens", {
   # This does change settings
   tsc_setup(
     api_token = "",
-    test_api_token = ""
+    test_api_token = "",
+    verbose = TRUE
   )
 
   # Get current (unchanged) settings

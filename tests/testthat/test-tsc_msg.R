@@ -18,4 +18,6 @@ test_that("tsc_msg works", {
   testthat::expect_message(tsc_msg_noop("test", verbose = TRUE))
   testthat::expect_warning(tsc_msg_warn("test", verbose = TRUE))
   testthat::expect_error(tsc_msg_abort("yo"))
+
+  tsc_setup(verbose = TRUE)
 })
