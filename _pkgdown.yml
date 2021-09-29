@@ -32,7 +32,7 @@ articles:
   desc: Access TSC data
   navbar: Access
   contents:
-  - 'taxon-occurrences'
+  - 'occurrences'
 - title: Analyse
   desc: Analyse TSC data
   navbar: Analyse

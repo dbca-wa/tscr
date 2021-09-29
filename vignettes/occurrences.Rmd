@@ -1,5 +1,5 @@
 ---
-title: "Access taxon point occurrence records"
+title: "Access taxon or community point or polygon occurrence records"
 output: 
   rmarkdown::html_document:
     toc: true
@@ -8,7 +8,7 @@ output:
     theme: yeti
     highlight: tango
 vignette: >
-  %\VignetteIndexEntry{taxon-occurrences}
+  %\VignetteIndexEntry{occurrences}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -82,24 +82,41 @@ omitted.
 See the [TSC API](https://tsc.dbca.wa.gov.au/api/1/) for the full list of available
 endpoints. 
 
-We show here [Taxon Point Occurrences](https://tsc.dbca.wa.gov.au/api/1/occ-taxon-points/).
-Each field can serve as a filter via the query attribute.
+We show here 
+[Taxon Point Occurrences](https://tsc.dbca.wa.gov.au/api/1/occ-taxon-points/)
+and [Communoty Polygon Occurrences](https://tsc.dbca.wa.gov.au/api/1/occ-community-areas/).
+
+Each data field can serve as a filter via the query attribute.
 
 
 ```{r get_tae}
 # Taxon occurrences with their Point representation
-tae_res <- tsc_GET("occ-taxon-points", max_records = 10) 
+tae_res <- tsc_GET("occ-taxon-points", max_records = 10)
+
+cae_res <- tsc_GET("occ-community-areas", max_records = 10)
 ```
+
 ## Occurrences as table
 We show some fields as an interactive table. The field `as_html` contains 
 rendered content which can be used as a map popup.
 
+### Taxon points
 ```{r tae_tbl}
 tae <- tae_res %>% tsc_parse()
-
 # head(tae) %>% knitr::kable()
 tae %>% 
   dplyr::select(label, encountered_on, geolocation_capture_method, as_html) %>% 
+  janitor::clean_names(case="sentence") %>% 
+  reactable::reactable(filterable=TRUE, sortable = TRUE, searchable = TRUE,
+                      defaultColDef = reactable::colDef(html=TRUE))
+```
+
+
+### Community areas
+```{r cae_tbl}
+cae <- cae_res %>% tsc_parse()
+cae %>% 
+  dplyr::select(label, encountered_on, as_html) %>% 
   janitor::clean_names(case="sentence") %>% 
   reactable::reactable(filterable=TRUE, sortable = TRUE, searchable = TRUE,
                       defaultColDef = reactable::colDef(html=TRUE))
@@ -109,6 +126,8 @@ tae %>%
 Taxon occurrences as GeoJSON SimpleFeatures for plotting.
 We use the field `as_html` as the popup and the geolocation capture method for
 grouping.
+
+### Taxon map
 ```{r tae_map}
 tae_gj <- tae_res %>%
   magrittr::extract2("data") %>%
@@ -118,7 +137,17 @@ tae_gj <- tae_res %>%
 mapview::mapview(tae_gj, popup="as_html", zcol="geolocation_capture_method")
 ```
 
-# Download all Taxon Occurrences from TSC
+### Community map
+```{r cae_map}
+cae_gj <- cae_res %>%
+  magrittr::extract2("data") %>%
+  geojsonio::as.json() %>%
+  geojsonsf::geojson_sf()
+
+mapview::mapview(cae_gj, popup="as_html", zcol="name")
+```
+
+# Download all Occurrences from TSC
 We get Taxon occurrences with their point representations from TSC through the 
 API endpoint [occ-taxon-points](https://tsc.dbca.wa.gov.au/api/1/occ-taxon-points/).
 
@@ -131,13 +160,13 @@ Caveat: Regions and Districts to not comprehensively cover WA.
 Lastly, we get a list of taxonomic names from TSC to resolve taxon IDs from
 taxon occurrences to names.
 
-Occurrences are presented as `occ` with DBCA Region and District names (where
-applicable), plus taxonomic names.
+Taxon Occurrences (taxon points) are presented as `occ` with DBCA Region and District 
+names (where applicable), plus taxonomic names.
+Community Occurrences (community areas) are named `com_occ`. 
 
 ```{r download, eval=F}
-datafile <- here::here("data/tae.RData")
-
 tsc_tae <- tsc_GET("occ-taxon-points") # 137k records
+tsc_cae <- tsc_GET("occ-community-areas")
 tsc_taxa <- tsc_GET("taxon") %>%
     wastdr::wastd_parse() %>%
     dplyr::mutate(name_id = name_id %>% as.character(), taxon = pk)
@@ -145,12 +174,12 @@ tsc_areas <- tsc_GET("area") %>%
       magrittr::extract2("features") %>%
       geojsonio::as.json() %>%
       geojsonsf::geojson_sf()
-save(tsc_tae, tsc_taxa, tsc_areas, file=datafile, compress="xz")
+
+save(tsc_tae, tsc_cae, tsc_taxa, tsc_areas, 
+     file=here::here("data/tsc.RData"), compress="xz")
 ```
 
 ```{r munge, eval=F}
-if (fs::file_exists(datafile)) load(datafile)
-
 regions <- tsc_areas %>%
   dplyr::filter(area_type == "Region") %>%
   dplyr::transmute(region_id = pk, region_name = name)
@@ -166,12 +195,20 @@ occ <- tsc_tae %>%
   sf::st_join(regions) %>% 
   sf::st_join(districts) %>% 
   dplyr::left_join(tsc_taxa, by="taxon")
+
+com_occ <- tsc_cae %>%
+  magrittr::extract2("features") %>%
+  geojsonio::as.json() %>%
+  geojsonsf::geojson_sf() %>% 
+  sf::st_join(regions) %>% 
+  sf::st_join(districts)
 ```
 
-# Visualise occurrences
+# Analyse occurrences
 
-## Species occurrences by DBCA Region
-
+## Taxon occurrences by DBCA Region
+This example demonstrates how to tally taxon occurences by DBCA Regions, which
+were joined spatially earlier.
 ```{r occ_by_reg, eval=FALSE}
 occ_by_region <- occ %>% 
     dplyr::group_by(region_name, taxonomic_name) %>% 
@@ -187,7 +224,7 @@ occ_by_region %>% reactable::reactable(sortable = T, filterable = T)
 ```
 
 ## Species occurrences by DBCA District
-
+The same summary, but by District.
 ```{r occ_by_dist, eval=FALSE}
 occ_by_district <- occ %>% 
     dplyr::group_by(district_name, taxonomic_name) %>% 
