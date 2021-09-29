@@ -29,13 +29,23 @@ library(tscr)
 Read how to [setup](https://dbca-wa.github.io/tscr/articles/setup.html) tscr
 to the TSC API.
 
-# Download Taxon Occurrences from TSC
+# Download Occurrences from TSC
 We get Taxon occurrences with their point representation from TSC.
 Currently, all Fauna and Flora occurrences have only points, not polygons.
-In future, Flora Populations can be captured as polygons representing the entire
+Flora Populations can be captured as polygons representing the entire
 population, or a surveyed part of it.
+While some taxon occurrences might have polygon extents, all have a point 
+representation.
+
+Community occurrences are mostly captured as polygons. Each community polygon 
+has a corresponding point representation (the centroid), but we limit this example
+to their polygons.
+
+The examples are mutually applicable to taxon polygons and community points.
 
 ## Areas as table
+TSC maintains several types of reference areas, such as DBCA Regions and Districts. 
+
 In this example, we download a subset of 10 Areas, parse the data into a table,
 and display selected columns of the downloaded Areas.
 
@@ -50,7 +60,7 @@ areas %>%
 
 ## Areas on a map
 
-In this example, we download Areas of type "Site", convert it to a spatial format
+In this example, we download Areas of all types, convert it to a spatial format
 (GeoJSON), and display it on a map. 
 
 See the [Areas API](https://tsc.dbca.wa.gov.au/api/1/area/) for other possible
@@ -63,13 +73,13 @@ map configuration options.
 ```{r areas_gj, eval=T}
 areas_gj <- 
   tsc_GET("area", 
-          query = list(area_type="Site"),
+          # query = list(area_type="Region"),
           chunk_size = 100) %>% 
   magrittr::extract2("data") %>%
   geojsonio::as.json() %>%
   geojsonsf::geojson_sf()
 
-mapview::mapview(areas_gj)
+mapview::mapview(areas_gj, zcol="area_type")
 ```
 
 ## Download Occurrences
@@ -93,6 +103,7 @@ Each data field can serve as a filter via the query attribute.
 # Taxon occurrences with their Point representation
 tae_res <- tsc_GET("occ-taxon-points", max_records = 10)
 
+# Community occurrences with their Polygon representation
 cae_res <- tsc_GET("occ-community-areas", max_records = 10)
 ```
 
