@@ -253,3 +253,26 @@ occ_by_district <- occ %>%
     )
 occ_by_district %>% reactable::reactable(sortable = T, filterable = T)
 ```
+
+## Save to various formats
+
+### Export to GeoJSON
+Objects of class "sf" can be saved to GeoJSON.
+GeoJSON files can be opened in GIS like Quantum GIS or ArcGIS for further processing
+and mapping.
+
+```{r export_data_gj, eval=F}
+areas_gj %>% sf::st_write("areas.geojson")
+tae_gj %>% sf::st_write("taxon_occurrences_point.geojson")
+cae_gj %>% sf::st_write("community_occurrences_polygon.geojson")
+```
+
+### Export to spreadsheets
+Any rectangular (tabular) data can be exported to CSV.
+
+```{r export_data_csv, eval=F}
+areas %>% readr::write_csv("areas.csv")
+tae %>% readr::write_csv("taxon_occurrences_point.csv")
+cae %>% readr::write_csv("community_occurrences_polygon.csv")
+```
+
