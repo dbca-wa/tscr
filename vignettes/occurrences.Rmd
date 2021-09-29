@@ -66,9 +66,9 @@ In this example, we download Areas of all types, convert it to a spatial format
 See the [Areas API](https://tsc.dbca.wa.gov.au/api/1/area/) for other possible
 filters.
 
+We set `mapview::mapviewOptions` with some sensible defaults.
 See the [mapview](https://r-spatial.github.io/mapview/index.html) homepage for 
-map configuration options.
-
+far more map configuration options.
 
 ```{r areas_gj, eval=T}
 areas_gj <- 
@@ -78,6 +78,12 @@ areas_gj <-
   magrittr::extract2("data") %>%
   geojsonio::as.json() %>%
   geojsonsf::geojson_sf()
+
+mapview::mapviewOptions(basemaps = c("Esri.WorldImagery", 
+                                     "Esri.WorldShadedRelief", 
+                                     "OpenTopoMap",
+                                     "OpenStreetMap"),
+                        layers.control.pos = "topright")
 
 mapview::mapview(areas_gj, zcol="area_type")
 ```
