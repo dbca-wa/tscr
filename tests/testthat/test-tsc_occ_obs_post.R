@@ -1,4 +1,4 @@
-test_that("tsc_occ_obs_post works", {
+test_that("tsc_occ_obs_post can upload valid example data", {
   testthat::skip_if_not(tsc_works())
 
   data("phys_sample")

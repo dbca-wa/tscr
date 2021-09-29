@@ -5,7 +5,7 @@
 \alias{phys_sample}
 \title{TSC Occurrence Observations of type "Physical Sample"}
 \format{
-An object of class \code{data.frame} with 10 rows and 7 columns.
+An object of class \code{data.frame} with 100 rows and 7 columns.
 }
 \usage{
 phys_sample
