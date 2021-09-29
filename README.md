@@ -38,7 +38,7 @@ Example questions (to be replaced with working examples):
     months.
 -   List occurrences flagged for review.
 
-Help us completing this list by filing new “Data export or analysis
+Help us complete this list by filing new “Data export or analysis
 requests” [here](https://github.com/dbca-wa/tscr/issues/new/choose).
 
 ## For data engineers

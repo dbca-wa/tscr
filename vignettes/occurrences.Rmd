@@ -1,5 +1,5 @@
 ---
-title: "Access taxon or community point or polygon occurrence records"
+title: "Access taxon or community occurrences"
 output: 
   rmarkdown::html_document:
     toc: true
@@ -15,10 +15,7 @@ vignette: >
 
 ```{r, include = FALSE}
 options(rmarkdown.html_vignette.check_title = FALSE)
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
 ```
 
 ```{r setup}
@@ -53,8 +50,9 @@ and display selected columns of the downloaded Areas.
 areas <- tsc_GET("area", chunk_size = 100, max_records = 10) %>% tsc_parse()
 
 areas %>% 
-  dplyr::select(name, area_type) %>% 
-  dplyr::arrange(area_type) %>% 
+  dplyr::select("area_type", "name") %>% 
+  dplyr::arrange("area_type") %>% 
+  janitor::clean_names(case="sentence") %>% 
   knitr::kable()
 ```
 

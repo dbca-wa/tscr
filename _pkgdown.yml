@@ -28,6 +28,11 @@ articles:
   navbar: Setup
   contents:
   - setup
+- title: Import
+  desc: Import data into TSC
+  navbar: Import
+  contents:
+  - 'wacensus'
 - title: Access
   desc: Access TSC data
   navbar: Access
@@ -37,11 +42,6 @@ articles:
   desc: Analyse TSC data
   navbar: Analyse
   contents:
-- title: Import
-  desc: Import data into TSC
-  navbar: Import
-  contents:
-  - 'wacensus'
 
 authors:
   DBCA:
