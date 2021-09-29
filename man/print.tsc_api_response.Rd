@@ -21,6 +21,7 @@ Other api:
 \code{\link{handle_http_status}()},
 \code{\link{tsc_GET}()},
 \code{\link{tsc_POST}()},
+\code{\link{tsc_chunk_post}()},
 \code{\link{tsc_parse}()}
 }
 \concept{api}

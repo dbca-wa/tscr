@@ -1,5 +1,5 @@
 ---
-title: "Importing taxonomic names from WACensus"
+title: "Import taxonomic names from WACensus"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{wacensus}
@@ -67,10 +67,12 @@ This is the format of the data expected by `tsc_POST`.
 tsc_POST(groups_props[[1]], serializer = "group")
 ```
 
+## List taxonomic names
 Similarly, we could extract the list of taxonomic names from the KMS GeoServer
 layer `public:herbie_hbvnames_public`, which represents the WACensus view `hbvnames`.
 
-We retain the fields used in TSC.
+We retain the fields used in TSC and limit the results to 100 names to keep
+the file size of this vignette small.
 
 ```{r list_names}
 wace_names <- "public:herbie_hbvnames_public" %>% 
@@ -82,7 +84,8 @@ wace_names <- "public:herbie_hbvnames_public" %>%
     author = purrr::map(., c("properties", "author")) %>% as.character(),
     reference = purrr::map(., c("properties", "reference")) %>% as.character(),
     rank_name = purrr::map(., c("properties", "rank_name")) %>% as.character()
-  )}
+  )} %>% 
+  head(100)
 
 wace_names %>% 
   reactable::reactable(filterable = TRUE, sortable = TRUE, searchable = TRUE)

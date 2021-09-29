@@ -70,6 +70,7 @@ Other api:
 \code{\link{handle_http_status}()},
 \code{\link{print.tsc_api_response}()},
 \code{\link{tsc_GET}()},
+\code{\link{tsc_chunk_post}()},
 \code{\link{tsc_parse}()}
 }
 \concept{api}

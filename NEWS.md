@@ -6,7 +6,8 @@
 
 # tscr 0.2.0
 ## Major fixes
-* Add `tsc_POST` and helpers to interact with GeoServer WFS (KMI WACensus endpoints)
+* Add `tsc_POST`, `tsc_chunk_post`, `tsc_occ_obs_post` for paginated upload (#2)
+* Add helpers to interact with GeoServer WFS (KMI WACensus endpoints)
 ## Minor fixes
 ## Documentation
 * Add vignette "wacensus": Update TSC Taxa from WACensus

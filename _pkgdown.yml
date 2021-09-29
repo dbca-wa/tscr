@@ -1,10 +1,14 @@
 url: https://dbca-wa.github.io/tscr
 
 reference:
-- title: API
-  desc: Top level functions to interact with the API.
+- title: TSC API
+  desc: Top level functions to interact with the TSC API.
   contents:
   - has_concept("api")
+- title: WACensus API
+  desc: Top level functions to interact with the WACensus API.
+  contents:
+  - has_concept("wacensus")
 - title: Data
   desc: Included example datasets for use in testing and as templates for data import.
   contents:
