@@ -33,6 +33,18 @@ Default: \code{\link{get_tsc_verbose}}.}
 \description{
 Post a list of records to TSC API endpoint "occ-observation/bulk_create"
 }
+\examples{
+\dontrun{
+testthat::skip_if_not(tsc_works())
+data("phys_sample")
+x <- tsc_occ_obs_post(phys_sample,
+                      obstype="PhysicalSample",
+                      chunksize = 10,
+                      api_url = get_tsc_test_api_url(),
+                      api_token = get_tsc_test_api_token(),
+                      verbose = TRUE)))
+}
+}
 \seealso{
 Other api: 
 \code{\link{handle_http_status}()},

@@ -8,7 +8,7 @@ test_that("tsc_chunk_post works", {
                           "area",
                           chunksize = 10,
                           api_url = get_tsc_test_api_url(),
-                          api_token = get_tsc_api_token(),
+                          api_token = get_tsc_test_api_token(),
                           verbose = TRUE)
     )
   )
