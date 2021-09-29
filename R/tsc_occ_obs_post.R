@@ -6,6 +6,7 @@
 #' @param chunksize The number of records to post at a time, default: 1000.
 #' @template param-auth
 #' @template param-verbose
+#' @family api
 #' @export
 tsc_occ_obs_post <- function(data,
                              obstype = "PhysicalSample",

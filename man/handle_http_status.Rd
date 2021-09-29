@@ -22,6 +22,7 @@ Other api:
 \code{\link{tsc_GET}()},
 \code{\link{tsc_POST}()},
 \code{\link{tsc_chunk_post}()},
+\code{\link{tsc_occ_obs_post}()},
 \code{\link{tsc_parse}()}
 }
 \concept{api}
