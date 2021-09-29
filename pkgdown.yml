@@ -2,10 +2,10 @@ pandoc: 2.7.3
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
+  occurrences: occurrences.html
   setup: setup.html
-  taxon-occurrences: taxon-occurrences.html
   wacensus: wacensus.html
-last_built: 2021-09-28T17:32Z
+last_built: 2021-09-29T01:35Z
 urls:
   reference: https://dbca-wa.github.io/tscr/reference
   article: https://dbca-wa.github.io/tscr/articles

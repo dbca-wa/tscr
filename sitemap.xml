@@ -28,6 +28,9 @@
     <loc>https://dbca-wa.github.io/tscr/reference/tsc_POST.html</loc>
   </url>
   <url>
+    <loc>https://dbca-wa.github.io/tscr/reference/tsc_chunk_post.html</loc>
+  </url>
+  <url>
     <loc>https://dbca-wa.github.io/tscr/reference/tsc_msg_abort.html</loc>
   </url>
   <url>
@@ -41,6 +44,9 @@
   </url>
   <url>
     <loc>https://dbca-wa.github.io/tscr/reference/tsc_msg_warn.html</loc>
+  </url>
+  <url>
+    <loc>https://dbca-wa.github.io/tscr/reference/tsc_occ_obs_post.html</loc>
   </url>
   <url>
     <loc>https://dbca-wa.github.io/tscr/reference/tsc_online.html</loc>
@@ -64,10 +70,10 @@
     <loc>https://dbca-wa.github.io/tscr/reference/upsert_geojson.html</loc>
   </url>
   <url>
-    <loc>https://dbca-wa.github.io/tscr/articles/setup.html</loc>
+    <loc>https://dbca-wa.github.io/tscr/articles/occurrences.html</loc>
   </url>
   <url>
-    <loc>https://dbca-wa.github.io/tscr/articles/taxon-occurrences.html</loc>
+    <loc>https://dbca-wa.github.io/tscr/articles/setup.html</loc>
   </url>
   <url>
     <loc>https://dbca-wa.github.io/tscr/articles/wacensus.html</loc>
