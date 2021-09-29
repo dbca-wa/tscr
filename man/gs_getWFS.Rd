@@ -2,7 +2,7 @@
 % Please edit documentation in R/gs_getWFS.R
 \name{gs_getWFS}
 \alias{gs_getWFS}
-\title{Return a GeoJSON Featurecollection from an OGC WFS 2.0.0 endpoint}
+\title{Return a GeoJSON FeatureCollection from an OGC WFS 2.0.0 endpoint}
 \usage{
 gs_getWFS(
   layer_name = "public:herbie_hbvsupra_public",

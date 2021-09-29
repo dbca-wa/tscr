@@ -1,4 +1,4 @@
-#' Return a GeoJSON Featurecollection from an OGC WFS 2.0.0 endpoint
+#' Return a GeoJSON FeatureCollection from an OGC WFS 2.0.0 endpoint
 #'
 #' \lifecycle{stable}
 #'
@@ -11,7 +11,7 @@
 #' @export
 #' @family wacensus
 gs_getWFS <- function(layer_name = "public:herbie_hbvsupra_public",
-                          url = "https://kmi.dbca.wa.gov.au/geoserver/dpaw/ows") {
+                      url = "https://kmi.dbca.wa.gov.au/geoserver/dpaw/ows") {
   ua <- httr::user_agent("http://github.com/dbca-wa/scarab-scripts")
   url <- "https://kmi.dbca.wa.gov.au/geoserver/public/ows"
   query <- list(
@@ -26,4 +26,4 @@ gs_getWFS <- function(layer_name = "public:herbie_hbvsupra_public",
     httr::content(., encoding = "utf-8")
 }
 
-# usethis::use_test("gs_getWFS")
+# usethis::use_test("gs_getWFS")  # nolint

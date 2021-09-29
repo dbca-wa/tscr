@@ -37,21 +37,23 @@ tsc_chunk_post <- function(data,
     end <- min(start + chunksize - 1, len)
 
     "[chunk_post][{Sys.time()}][{i}] Processing feature {start} to {end}" %>%
-      glue::glue() %>% tsc_msg_info(verbose = verbose)
+      glue::glue() %>%
+      tsc_msg_info(verbose = verbose)
 
     res <- data[start:end, ] %>%
       tsc_POST(.,
-               serializer = serializer,
-               query = query,
-               encode = encode,
-               api_url = api_url,
-               api_token = api_token,
-               verbose = verbose
+        serializer = serializer,
+        query = query,
+        encode = encode,
+        api_url = api_url,
+        api_token = api_token,
+        verbose = verbose
       )
   }
 
   "[chunk_post][{Sys.time()}] Finished, {len} records created/updated." %>%
-    glue::glue() %>% tsc_msg_info(verbose = verbose)
+    glue::glue() %>%
+    tsc_msg_info(verbose = verbose)
   res
 }
 

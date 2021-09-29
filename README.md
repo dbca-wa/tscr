@@ -96,7 +96,7 @@ Want to contribute code? Start with the [contribution
 guide](https://dbca-wa.github.io/tscr/CONTRIBUTING.html), but don’t be
 afraid to ask for help and submit early PRs.
 
-## For package maintainers and contributors
+## For package maintainers
 
 Tasks that can be run for each release are shown below.
 

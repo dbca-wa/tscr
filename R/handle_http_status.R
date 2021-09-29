@@ -21,7 +21,7 @@ handle_http_status <- function(response,
     )
   }
 
-  # httr::stop_for_status(response)
+  # httr::stop_for_status(response)  # nolint
 
   if (httr::http_error(response)) {
     "WAStD API request failed with [{httr::status_code(response)}]" %>%
@@ -41,4 +41,4 @@ handle_http_status <- function(response,
   }
 }
 
-# usethis::use_test("handle_http_status")
+# usethis::use_test("handle_http_status")  # nolint

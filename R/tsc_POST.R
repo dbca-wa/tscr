@@ -28,12 +28,12 @@
 #'   upsert_geojson(serializer = "names", verbose = T)
 #' }
 tsc_POST <- function(data,
-                       serializer,
-                       query = list(format = "json"),
-                       encode = "json",
-                       api_url = get_tsc_api_url(),
-                       api_token = get_tsc_api_token(),
-                       verbose = get_tsc_verbose()) {
+                     serializer,
+                     query = list(format = "json"),
+                     encode = "json",
+                     api_url = get_tsc_api_url(),
+                     api_token = get_tsc_api_token(),
+                     verbose = get_tsc_verbose()) {
   ua <- httr::user_agent("http://github.com/dbca-wa/tscr")
   url_parts <- httr::parse_url(api_url)
   url_parts["path"] <- glue::glue("{url_parts['path']}{serializer}/")
@@ -76,4 +76,4 @@ tsc_POST <- function(data,
   )
 }
 
-# usethis::use_test("tsc_POST")
+# usethis::use_test("tsc_POST")  # nolint

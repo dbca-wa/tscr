@@ -5,4 +5,4 @@ test_that("gs_getWFS returns a list", {
 })
 
 
-# usethis::use_r("gs_getWFS")
+# usethis::use_r("gs_getWFS")   # nolint

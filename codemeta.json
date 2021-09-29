@@ -6,12 +6,12 @@
   "@type": "SoftwareSourceCode",
   "identifier": "tscr",
   "description": "TSC is DBCA's Threatened Species and Communities Data Portal.\n  TSC provides programmatic access to its data through a RESTful API. \n  'tscr' provides helpers and working examples of getting data in and out of \n  TSC's API, as well as starting points for data visualisations and analyses of \n  TSC data.",
-  "name": "tscr: Threatened Species and Communities Data Export and Analysis",
+  "name": "tscr: Threatened Species and Communities Data ETL and Analysis",
   "codeRepository": "https://github.com/dbca-wa/tscr",
   "relatedLink": "https://dbca-wa.github.io/tscr/",
   "issueTracker": "https://github.com/dbca-wa/tscr/issues/new/choose",
   "license": "https://spdx.org/licenses/MIT",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
@@ -368,17 +368,31 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=janitor"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "purrr",
+      "name": "purrr",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=purrr"
     }
   ],
   "releaseNotes": "https://github.com/dbca-wa/tscr/blob/master/NEWS.md",
   "readme": "https://github.com/dbca-wa/tscr/blob/master/README.md",
-  "fileSize": "3798.236KB",
+  "fileSize": "4693.24KB",
   "contIntegration": "https://codecov.io/gh/dbca-wa/tscr?branch=master",
   "keywords": [
     "threatened",
     "species",
     "ecological-communities",
     "conservation-management",
-    "data-access"
+    "data-access",
+    "rstats",
+    "r"
   ]
 }

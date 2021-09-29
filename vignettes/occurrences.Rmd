@@ -100,7 +100,7 @@ endpoints.
 
 We show here 
 [Taxon Point Occurrences](https://tsc.dbca.wa.gov.au/api/1/occ-taxon-points/)
-and [Communoty Polygon Occurrences](https://tsc.dbca.wa.gov.au/api/1/occ-community-areas/).
+and [Community Polygon Occurrences](https://tsc.dbca.wa.gov.au/api/1/occ-community-areas/).
 
 Each data field can serve as a filter via the query attribute.
 

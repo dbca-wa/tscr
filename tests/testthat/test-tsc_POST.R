@@ -30,4 +30,4 @@ test_that("tsc_POST errors on authentication failure", {
   )
 })
 
-# usethis::use_r("tsc_POST")
+# usethis::use_r("tsc_POST")   # nolint

@@ -5,7 +5,7 @@
 \title{Upsert GeoJSON into TSC API endpoints}
 \usage{
 upsert_geojson(
-  gj_featurecollection,
+  gjfc,
   serializer = "names",
   chunksize = 1000,
   api_url = get_tsc_api_url(),
@@ -14,7 +14,7 @@ upsert_geojson(
 )
 }
 \arguments{
-\item{gj_featurecollection}{(list) A GeoJSON featurecollection as list}
+\item{gjfc}{(list) A GeoJSON FeatureCollection as list}
 
 \item{serializer}{(character) TSC API serializer name (required)
 Possible values see \code{https://tsc.dbca.wa.gov.au/api/1/}}

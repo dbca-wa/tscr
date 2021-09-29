@@ -1,6 +1,6 @@
 #' Upsert GeoJSON into TSC API endpoints
 #'
-#' @param gj_featurecollection (list) A GeoJSON featurecollection as list
+#' @param gjfc (list) A GeoJSON FeatureCollection as list
 #' @template param-serializer
 #' @param chunksize (int) The number of features to upload simultaneously,
 #'   default: 1000.
@@ -8,7 +8,7 @@
 #' @template param-verbose
 #' @export
 #' @family wacensus
-upsert_geojson <- function(gj_featurecollection,
+upsert_geojson <- function(gjfc,
                            serializer = "names",
                            chunksize = 1000,
                            api_url = get_tsc_api_url(),
@@ -17,9 +17,9 @@ upsert_geojson <- function(gj_featurecollection,
   "Posting to {api_url}{serializer}..." %>%
     glue::glue() %>%
     tsc_msg_info(verbose = verbose)
-  props <- purrr::map(gj_featurecollection[["features"]], "properties")
-  # purrr::map(props, wastd_POST, api_url = api_url)
-  # One by one - very slow. Faster:
+  props <- purrr::map(gjfc[["features"]], "properties")
+  # purrr::map(props, wastd_POST, api_url = api_url)   # nolint
+  # One by one - very slow. Faster:   # nolint
   len <- length(props)
   for (i in 0:(len / chunksize)) {
     start <- (i * chunksize) + 1
@@ -30,10 +30,10 @@ upsert_geojson <- function(gj_featurecollection,
     props[start:end] %>%
       purrr::map(., purrr::flatten) %>%
       tsc_POST(.,
-                 serializer = serializer,
-                 api_url = api_url,
-                 api_token = api_token,
-                 verbose = verbose
+        serializer = serializer,
+        api_url = api_url,
+        api_token = api_token,
+        verbose = verbose
       )
   }
   "Finished. {len} records updated." %>%
@@ -41,4 +41,4 @@ upsert_geojson <- function(gj_featurecollection,
     tsc_msg_info(verbose = verbose)
 }
 
-# usethis::use_test("upsert_geojson")
+# usethis::use_test("upsert_geojson")  # nolint

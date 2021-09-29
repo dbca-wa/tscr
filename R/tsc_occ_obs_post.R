@@ -8,13 +8,14 @@
 #' @template param-verbose
 #' @export
 tsc_occ_obs_post <- function(data,
-                               obstype = "PhysicalSample",
-                               chunksize = 100,
-                               api_url = get_tsc_api_url(),
-                               api_token = get_tsc_api_token(),
+                             obstype = "PhysicalSample",
+                             chunksize = 100,
+                             api_url = get_tsc_api_url(),
+                             api_token = get_tsc_api_token(),
                              verbose = get_tsc_verbose()) {
   "[{Sys.time()}] Uploading {nrow(data)} {obstype}s to  TSC {api_url}" %>%
-    glue::glue() %>% tsc_msg_info(verbose=verbose)
+    glue::glue() %>%
+    tsc_msg_info(verbose = verbose)
 
   res <- tsc_chunk_post(
     data,
@@ -25,14 +26,18 @@ tsc_occ_obs_post <- function(data,
     chunksize = chunksize
   )
 
-  if ("created_count" %in% names(res$data))
+  if ("created_count" %in% names(res$data)) {
     "[{Sys.time()}] Done, created {res$data$created_count} records." %>%
-      glue::glue() %>% tsc_msg_success(verbose=verbose)
+      glue::glue() %>%
+      tsc_msg_success(verbose = verbose)
+  }
 
   if ("errors" %in% names(res$data) &&
-      length(res$data$errors) > 0)
+    length(res$data$errors) > 0) {
     "[{Sys.time()}] Got {length(res$data$errors)} errors." %>%
-    glue::glue() %>% tsc_msg_warn(verbose=verbose)
+      glue::glue() %>%
+      tsc_msg_warn(verbose = verbose)
+  }
 
   res
 }

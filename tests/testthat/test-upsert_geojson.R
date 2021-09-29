@@ -6,4 +6,4 @@ test_that("upsert_geojson works", {
   )
 })
 
-# usethis::use_r("upsert_geojson")
+# usethis::use_r("upsert_geojson")   # nolint

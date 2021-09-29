@@ -1,5 +1,4 @@
 test_that("handle_http_status warns about HTTP error", {
-
   tsc_setup(verbose = TRUE)
 
   expect_warning(handle_http_status(httr::GET("http://httpstat.us/401")))
