@@ -11,6 +11,8 @@
 ## Minor fixes
 ## Documentation
 ## Data
+* Include data used in vignette as package data to allow building the vignette
+  without TSC credentials or API calls.
 
 # tscr 0.2.0
 ## Major fixes

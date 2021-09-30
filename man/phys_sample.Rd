@@ -13,5 +13,12 @@ phys_sample
 \description{
 This data is used in the examples and tests for \code{tsc_occ_obs_post}.
 }
+\seealso{
+Other data: 
+\code{\link{areas_gj}},
+\code{\link{areas}},
+\code{\link{cae_res}},
+\code{\link{tae_res}}
+}
 \concept{data}
 \keyword{datasets}
