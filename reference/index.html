@@ -71,7 +71,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">tscr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
       </span>
     </div>
 
@@ -230,6 +230,43 @@
     </tbody><tbody>
       <tr>
         <th colspan="2">
+          <h2 id="section-ckan-helpers" class="hasAnchor"><a href="#section-ckan-helpers" class="anchor"></a>CKAN helpers</h2>
+          <p class="section-desc"><p>Top level functions to interact with the CKAN API and file resources.</p></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="ckan_works.html">ckan_works()</a></code> </p>
+        </td>
+        <td><p>Check whether CKAN is accessible with given credentials</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="dl_mdbzip.html">dl_mdbzip()</a></code> </p>
+        </td>
+        <td><p>Download, extract and open a zipped Access database from a CKAN dataset.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="upload_file_to_ckan.html">upload_file_to_ckan()</a></code> </p>
+        </td>
+        <td><p>Upload a file to an existing CKAN resource ID or skip if file is missing</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="upload_to_ckan.html">upload_to_ckan()</a></code> </p>
+        </td>
+        <td><p>Create or update a CKAN resource.</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
           <h2 id="section-data" class="hasAnchor"><a href="#section-data" class="anchor"></a>Data</h2>
           <p class="section-desc"><p>Included example datasets for use in testing and as templates for data import.</p></p>
         </th>
@@ -242,9 +279,33 @@
       <tr>
         
         <td>
+          <p><code><a href="areas.html">areas</a></code> </p>
+        </td>
+        <td><p>TSC Areas as tibble</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="areas_gj.html">areas_gj</a></code> </p>
+        </td>
+        <td><p>TSC Areas as GeoJSON</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="cae_res.html">cae_res</a></code> </p>
+        </td>
+        <td><p>TSC Community occurrences with their Polygon representation, unparsed</p></td>
+      </tr><tr>
+        
+        <td>
           <p><code><a href="phys_sample.html">phys_sample</a></code> </p>
         </td>
         <td><p>TSC Occurrence Observations of type "Physical Sample"</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="tae_res.html">tae_res</a></code> </p>
+        </td>
+        <td><p>TSC Taxon occurrences with their Point representation, unparsed</p></td>
       </tr>
     </tbody><tbody>
       <tr>

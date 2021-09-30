@@ -4,6 +4,21 @@
     <loc>https://dbca-wa.github.io/tscr/index.html</loc>
   </url>
   <url>
+    <loc>https://dbca-wa.github.io/tscr/reference/areas.html</loc>
+  </url>
+  <url>
+    <loc>https://dbca-wa.github.io/tscr/reference/areas_gj.html</loc>
+  </url>
+  <url>
+    <loc>https://dbca-wa.github.io/tscr/reference/cae_res.html</loc>
+  </url>
+  <url>
+    <loc>https://dbca-wa.github.io/tscr/reference/ckan_works.html</loc>
+  </url>
+  <url>
+    <loc>https://dbca-wa.github.io/tscr/reference/dl_mdbzip.html</loc>
+  </url>
+  <url>
     <loc>https://dbca-wa.github.io/tscr/reference/get_more.html</loc>
   </url>
   <url>
@@ -23,6 +38,9 @@
   </url>
   <url>
     <loc>https://dbca-wa.github.io/tscr/reference/print.tsc_api_response.html</loc>
+  </url>
+  <url>
+    <loc>https://dbca-wa.github.io/tscr/reference/tae_res.html</loc>
   </url>
   <url>
     <loc>https://dbca-wa.github.io/tscr/reference/tsc_GET.html</loc>
@@ -68,6 +86,12 @@
   </url>
   <url>
     <loc>https://dbca-wa.github.io/tscr/reference/tscr-package.html</loc>
+  </url>
+  <url>
+    <loc>https://dbca-wa.github.io/tscr/reference/upload_file_to_ckan.html</loc>
+  </url>
+  <url>
+    <loc>https://dbca-wa.github.io/tscr/reference/upload_to_ckan.html</loc>
   </url>
   <url>
     <loc>https://dbca-wa.github.io/tscr/reference/upsert_geojson.html</loc>

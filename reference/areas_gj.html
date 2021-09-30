@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Check whether API token is set and TSC is online — tsc_works • tscr</title>
+<title>TSC Areas as GeoJSON — areas_gj • tscr</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Check whether API token is set and TSC is online — tsc_works" />
-<meta property="og:description" content="" />
+<meta property="og:title" content="TSC Areas as GeoJSON — areas_gj" />
+<meta property="og:description" content="This data is used in the vignette &quot;occurrences&quot;." />
 
 
 
@@ -137,42 +137,28 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Check whether API token is set and TSC is online</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dbca-wa/tscr/blob/master/R/tsc_works.R'><code>R/tsc_works.R</code></a></small>
-    <div class="hidden name"><code>tsc_works.Rd</code></div>
+    <h1>TSC Areas as GeoJSON</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dbca-wa/tscr/blob/master/R/data.R'><code>R/data.R</code></a></small>
+    <div class="hidden name"><code>areas_gj.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p><a href='https://lifecycle.r-lib.org/articles/stages.html#stable'><img src='figures/lifecycle-stable.svg' alt='[Stable]' /></a></p>
+    <p>This data is used in the vignette "occurrences".</p>
     </div>
 
-    <pre class="usage"><span class='fu'>tsc_works</span><span class='op'>(</span>api_url <span class='op'>=</span> <span class='fu'><a href='tsc_settings.html'>get_tsc_api_url</a></span><span class='op'>(</span><span class='op'>)</span>, api_token <span class='op'>=</span> <span class='fu'><a href='tsc_settings.html'>get_tsc_api_token</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='va'>areas_gj</span></pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>api_url</th>
-      <td><p>(character) The TSC API URL,
-default <code><a href='tsc_settings.html'>get_tsc_api_url</a></code>, see <code><a href='tsc_setup.html'>tsc_setup</a></code></p></td>
-    </tr>
-    <tr>
-      <th>api_token</th>
-      <td><p>(character) The TSC API token,
-default <code><a href='tsc_settings.html'>get_tsc_api_token</a></code>, see <code><a href='tsc_setup.html'>tsc_setup</a></code></p></td>
-    </tr>
-    </table>
 
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+
+    <p>An object of class <code>sf</code> (inherits from <code>data.frame</code>) with 146 rows and 8 columns.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other helpers: 
-<code><a href='get_more.html'>get_more</a>()</code>,
-<code><a href='tsc_msg_abort.html'>tsc_msg_abort</a>()</code>,
-<code><a href='tsc_msg_info.html'>tsc_msg_info</a>()</code>,
-<code><a href='tsc_msg_noop.html'>tsc_msg_noop</a>()</code>,
-<code><a href='tsc_msg_success.html'>tsc_msg_success</a>()</code>,
-<code><a href='tsc_msg_warn.html'>tsc_msg_warn</a>()</code>,
-<code><a href='tsc_online.html'>tsc_online</a>()</code></p></div>
+    <div class='dont-index'><p>Other data: 
+<code><a href='areas.html'>areas</a></code>,
+<code><a href='cae_res.html'>cae_res</a></code>,
+<code><a href='phys_sample.html'>phys_sample</a></code>,
+<code><a href='tae_res.html'>tae_res</a></code></p></div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

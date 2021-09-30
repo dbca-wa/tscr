@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Check whether API token is set and TSC is online — tsc_works • tscr</title>
+<title>Upload a file to an existing CKAN resource ID or skip if file is missing — upload_file_to_ckan • tscr</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,9 @@
 
 
 
-<meta property="og:title" content="Check whether API token is set and TSC is online — tsc_works" />
-<meta property="og:description" content="" />
+<meta property="og:title" content="Upload a file to an existing CKAN resource ID or skip if file is missing — upload_file_to_ckan" />
+<meta property="og:description" content="This function can be used to update an existing CKAN file resource with a
+compiled Rmd workbook (i.e a HTML file)." />
 
 
 
@@ -137,43 +138,53 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Check whether API token is set and TSC is online</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dbca-wa/tscr/blob/master/R/tsc_works.R'><code>R/tsc_works.R</code></a></small>
-    <div class="hidden name"><code>tsc_works.Rd</code></div>
+    <h1>Upload a file to an existing CKAN resource ID or skip if file is missing</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dbca-wa/tscr/blob/master/R/upload_file_to_ckan.R'><code>R/upload_file_to_ckan.R</code></a></small>
+    <div class="hidden name"><code>upload_file_to_ckan.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p><a href='https://lifecycle.r-lib.org/articles/stages.html#stable'><img src='figures/lifecycle-stable.svg' alt='[Stable]' /></a></p>
+    <p>This function can be used to update an existing CKAN file resource with a
+compiled Rmd workbook (i.e a HTML file).</p>
     </div>
 
-    <pre class="usage"><span class='fu'>tsc_works</span><span class='op'>(</span>api_url <span class='op'>=</span> <span class='fu'><a href='tsc_settings.html'>get_tsc_api_url</a></span><span class='op'>(</span><span class='op'>)</span>, api_token <span class='op'>=</span> <span class='fu'><a href='tsc_settings.html'>get_tsc_api_token</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>upload_file_to_ckan</span><span class='op'>(</span><span class='va'>rid</span>, <span class='va'>fn</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>api_url</th>
-      <td><p>(character) The TSC API URL,
-default <code><a href='tsc_settings.html'>get_tsc_api_url</a></code>, see <code><a href='tsc_setup.html'>tsc_setup</a></code></p></td>
+      <th>rid</th>
+      <td><p>An existing CKAN resource ID.</p></td>
     </tr>
     <tr>
-      <th>api_token</th>
-      <td><p>(character) The TSC API token,
-default <code><a href='tsc_settings.html'>get_tsc_api_token</a></code>, see <code><a href='tsc_setup.html'>tsc_setup</a></code></p></td>
+      <th>fn</th>
+      <td><p>The file to upload as the CKAN file resource.</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>NULL if the file is missing, or the resource ID.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>This function is a wrapper around <code><a href='https://docs.ropensci.org/ckanr/reference/resource_update.html'>ckanr::resource_update()</a></code> with contingencies
+for missing files.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other helpers: 
-<code><a href='get_more.html'>get_more</a>()</code>,
-<code><a href='tsc_msg_abort.html'>tsc_msg_abort</a>()</code>,
-<code><a href='tsc_msg_info.html'>tsc_msg_info</a>()</code>,
-<code><a href='tsc_msg_noop.html'>tsc_msg_noop</a>()</code>,
-<code><a href='tsc_msg_success.html'>tsc_msg_success</a>()</code>,
-<code><a href='tsc_msg_warn.html'>tsc_msg_warn</a>()</code>,
-<code><a href='tsc_online.html'>tsc_online</a>()</code></p></div>
+    <div class='dont-index'><p>Other ckan: 
+<code><a href='ckan_works.html'>ckan_works</a>()</code>,
+<code><a href='dl_mdbzip.html'>dl_mdbzip</a>()</code>,
+<code><a href='upload_to_ckan.html'>upload_to_ckan</a>()</code></p></div>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='fu'>ckanr</span><span class='fu'>::</span><span class='fu'><a href='https://docs.ropensci.org/ckanr/reference/ckanr_setup.html'>ckanr_setup</a></span><span class='op'>(</span>
+  url <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span><span class='op'>(</span><span class='st'>"CKAN_URL"</span><span class='op'>)</span>, key <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span><span class='op'>(</span><span class='st'>"CKAN_API_KEY"</span><span class='op'>)</span>
+<span class='op'>)</span>
+<span class='fu'>upload_file_to_ckan</span><span class='op'>(</span><span class='st'>"1b5e6401-82fe-4728-83be-f3f8ea4b5876"</span>, <span class='st'>"EDA_flora.html"</span><span class='op'>)</span>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

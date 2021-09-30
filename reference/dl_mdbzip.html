@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Check whether API token is set and TSC is online — tsc_works • tscr</title>
+<title>Download, extract and open a zipped Access database from a CKAN dataset. — dl_mdbzip • tscr</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,11 @@
 
 
 
-<meta property="og:title" content="Check whether API token is set and TSC is online — tsc_works" />
-<meta property="og:description" content="" />
+<meta property="og:title" content="Download, extract and open a zipped Access database from a CKAN dataset. — dl_mdbzip" />
+<meta property="og:description" content="The extracted file will be kept in destdir.
+If a file with the expected filename already exists in destdir, this file
+will be used.
+To force a fresh download, remove or rename the file in destdir." />
 
 
 
@@ -137,43 +140,72 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Check whether API token is set and TSC is online</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dbca-wa/tscr/blob/master/R/tsc_works.R'><code>R/tsc_works.R</code></a></small>
-    <div class="hidden name"><code>tsc_works.Rd</code></div>
+    <h1>Download, extract and open a zipped Access database from a CKAN dataset.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dbca-wa/tscr/blob/master/R/dl_mdbzip.R'><code>R/dl_mdbzip.R</code></a></small>
+    <div class="hidden name"><code>dl_mdbzip.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p><a href='https://lifecycle.r-lib.org/articles/stages.html#stable'><img src='figures/lifecycle-stable.svg' alt='[Stable]' /></a></p>
+    <p>The extracted file will be kept in <code>destdir</code>.
+If a file with the expected filename already exists in <code>destdir</code>, this file
+will be used.
+To force a fresh download, remove or rename the file in <code>destdir</code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>tsc_works</span><span class='op'>(</span>api_url <span class='op'>=</span> <span class='fu'><a href='tsc_settings.html'>get_tsc_api_url</a></span><span class='op'>(</span><span class='op'>)</span>, api_token <span class='op'>=</span> <span class='fu'><a href='tsc_settings.html'>get_tsc_api_token</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>dl_mdbzip</span><span class='op'>(</span>
+  <span class='va'>resource_id</span>,
+  destdir <span class='op'>=</span> <span class='fu'>here</span><span class='fu'>::</span><span class='fu'>here</span><span class='op'>(</span><span class='st'>"data"</span><span class='op'>)</span>,
+  dateformat <span class='op'>=</span> <span class='st'>"%m-%d-%Y"</span>,
+  as.is <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  verbose <span class='op'>=</span> <span class='fu'><a href='tsc_settings.html'>get_tsc_verbose</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>api_url</th>
-      <td><p>(character) The TSC API URL,
-default <code><a href='tsc_settings.html'>get_tsc_api_url</a></code>, see <code><a href='tsc_setup.html'>tsc_setup</a></code></p></td>
+      <th>resource_id</th>
+      <td><p>The CKAN resource ID of a zipped Access DB.</p></td>
     </tr>
     <tr>
-      <th>api_token</th>
-      <td><p>(character) The TSC API token,
-default <code><a href='tsc_settings.html'>get_tsc_api_token</a></code>, see <code><a href='tsc_setup.html'>tsc_setup</a></code></p></td>
+      <th>destdir</th>
+      <td><p>The local destination directory for the extracted file,
+will be created if not existing. Default: <code>here::here("data")</code>.</p></td>
+    </tr>
+    <tr>
+      <th>dateformat</th>
+      <td><p>The parameter dateformat for <code><a href='https://rdrr.io/pkg/Hmisc/man/mdb.get.html'>Hmisc::mdb.get()</a></code>,
+default: <code>%Y-%m-%d</code>.</p></td>
+    </tr>
+    <tr>
+      <th>as.is</th>
+      <td><p>The parameter <code>as.is</code> for <code><a href='https://rdrr.io/pkg/Hmisc/man/mdb.get.html'>Hmisc::mdb.get()</a></code>, default: TRUE.</p></td>
+    </tr>
+    <tr>
+      <th>verbose</th>
+      <td><p>Whether to show verbose messages.
+Default: <code><a href='tsc_settings.html'>get_tsc_verbose</a></code>.</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>The <code><a href='https://rdrr.io/pkg/Hmisc/man/mdb.get.html'>Hmisc::mdb.get</a></code> connection.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other helpers: 
-<code><a href='get_more.html'>get_more</a>()</code>,
-<code><a href='tsc_msg_abort.html'>tsc_msg_abort</a>()</code>,
-<code><a href='tsc_msg_info.html'>tsc_msg_info</a>()</code>,
-<code><a href='tsc_msg_noop.html'>tsc_msg_noop</a>()</code>,
-<code><a href='tsc_msg_success.html'>tsc_msg_success</a>()</code>,
-<code><a href='tsc_msg_warn.html'>tsc_msg_warn</a>()</code>,
-<code><a href='tsc_online.html'>tsc_online</a>()</code></p></div>
+    <div class='dont-index'><p>Other ckan: 
+<code><a href='ckan_works.html'>ckan_works</a>()</code>,
+<code><a href='upload_file_to_ckan.html'>upload_file_to_ckan</a>()</code>,
+<code><a href='upload_to_ckan.html'>upload_to_ckan</a>()</code></p></div>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='fu'>ckanr</span><span class='fu'>::</span><span class='fu'><a href='https://docs.ropensci.org/ckanr/reference/ckanr_setup.html'>ckanr_setup</a></span><span class='op'>(</span>
+  url <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span><span class='op'>(</span><span class='st'>"CKAN_URL"</span><span class='op'>)</span>, key <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span><span class='op'>(</span><span class='st'>"CKAN_API_KEY"</span><span class='op'>)</span>
+<span class='op'>)</span>
+<span class='va'>tfa_data</span> <span class='op'>&lt;-</span> <span class='fu'>dl_mdbzip</span><span class='op'>(</span><span class='st'>"66efb68d-8f05-4bfc-af14-5d1a381d0cf2"</span>, verbose <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

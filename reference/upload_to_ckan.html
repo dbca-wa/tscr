@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Check whether API token is set and TSC is online — tsc_works • tscr</title>
+<title>Create or update a CKAN resource. — upload_to_ckan • tscr</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Check whether API token is set and TSC is online — tsc_works" />
-<meta property="og:description" content="" />
+<meta property="og:title" content="Create or update a CKAN resource. — upload_to_ckan" />
+<meta property="og:description" content="Create or update a CKAN resource." />
 
 
 
@@ -137,43 +137,82 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Check whether API token is set and TSC is online</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dbca-wa/tscr/blob/master/R/tsc_works.R'><code>R/tsc_works.R</code></a></small>
-    <div class="hidden name"><code>tsc_works.Rd</code></div>
+    <h1>Create or update a CKAN resource.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dbca-wa/tscr/blob/master/R/upload_to_ckan.R'><code>R/upload_to_ckan.R</code></a></small>
+    <div class="hidden name"><code>upload_to_ckan.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p><a href='https://lifecycle.r-lib.org/articles/stages.html#stable'><img src='figures/lifecycle-stable.svg' alt='[Stable]' /></a></p>
+    <p>Create or update a CKAN resource.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>tsc_works</span><span class='op'>(</span>api_url <span class='op'>=</span> <span class='fu'><a href='tsc_settings.html'>get_tsc_api_url</a></span><span class='op'>(</span><span class='op'>)</span>, api_token <span class='op'>=</span> <span class='fu'><a href='tsc_settings.html'>get_tsc_api_token</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>upload_to_ckan</span><span class='op'>(</span>
+  <span class='va'>data</span>,
+  <span class='va'>resource_title</span>,
+  <span class='va'>dataset_id</span>,
+  resource_id <span class='op'>=</span> <span class='cn'>NULL</span>,
+  verbose <span class='op'>=</span> <span class='fu'><a href='tsc_settings.html'>get_tsc_verbose</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>api_url</th>
-      <td><p>(character) The TSC API URL,
-default <code><a href='tsc_settings.html'>get_tsc_api_url</a></code>, see <code><a href='tsc_setup.html'>tsc_setup</a></code></p></td>
+      <th>data</th>
+      <td><p>A data frame to write to disk.</p></td>
     </tr>
     <tr>
-      <th>api_token</th>
-      <td><p>(character) The TSC API token,
-default <code><a href='tsc_settings.html'>get_tsc_api_token</a></code>, see <code><a href='tsc_setup.html'>tsc_setup</a></code></p></td>
+      <th>resource_title</th>
+      <td><p>A CKAN resource title.</p></td>
+    </tr>
+    <tr>
+      <th>dataset_id</th>
+      <td><p>A CKAN dataset (package) ID.</p></td>
+    </tr>
+    <tr>
+      <th>resource_id</th>
+      <td><p>A CKAN resource ID, default: NULL.</p></td>
+    </tr>
+    <tr>
+      <th>verbose</th>
+      <td><p>Whether to show verbose messages.
+Default: <code><a href='tsc_settings.html'>get_tsc_verbose</a></code>.</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>The resource ID of the created or updated resource.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The data will be written to CSV in a directory <code>data/</code> with the
+resource title in snake_case.
+If no resource ID is given, a resource will be created.
+The resource ID is returned in either case.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other helpers: 
-<code><a href='get_more.html'>get_more</a>()</code>,
-<code><a href='tsc_msg_abort.html'>tsc_msg_abort</a>()</code>,
-<code><a href='tsc_msg_info.html'>tsc_msg_info</a>()</code>,
-<code><a href='tsc_msg_noop.html'>tsc_msg_noop</a>()</code>,
-<code><a href='tsc_msg_success.html'>tsc_msg_success</a>()</code>,
-<code><a href='tsc_msg_warn.html'>tsc_msg_warn</a>()</code>,
-<code><a href='tsc_online.html'>tsc_online</a>()</code></p></div>
+    <div class='dont-index'><p>Other ckan: 
+<code><a href='ckan_works.html'>ckan_works</a>()</code>,
+<code><a href='dl_mdbzip.html'>dl_mdbzip</a>()</code>,
+<code><a href='upload_file_to_ckan.html'>upload_file_to_ckan</a>()</code></p></div>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='fu'>ckanr</span><span class='fu'>::</span><span class='fu'><a href='https://docs.ropensci.org/ckanr/reference/ckanr_setup.html'>ckanr_setup</a></span><span class='op'>(</span>
+  url <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span><span class='op'>(</span><span class='st'>"CKAN_URL"</span><span class='op'>)</span>, key <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span><span class='op'>(</span><span class='st'>"CKAN_API_KEY"</span><span class='op'>)</span>
+<span class='op'>)</span>
+<span class='va'>d</span> <span class='op'>&lt;-</span> <span class='fu'>ckanr</span><span class='fu'>::</span><span class='fu'><a href='https://docs.ropensci.org/ckanr/reference/package_show.html'>package_show</a></span><span class='op'>(</span><span class='st'>"threatened-ecological-communities-database"</span><span class='op'>)</span>
+
+<span class='co'># Run this once to create resource and retrieve resource ID</span>
+<span class='fu'>upload_to_ckan</span><span class='op'>(</span><span class='va'>a_tibble</span>, <span class='st'>"Resource title"</span>, <span class='va'>d</span><span class='op'>$</span><span class='va'>id</span>, resource_id <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span>
+<span class='co'># returns "502c74d7-32be-453f-aff6-c50aedd3deed" - paste into resource_id</span>
+
+<span class='co'># Re-run this to update resource with new data</span>
+<span class='fu'>upload_to_ckan</span><span class='op'>(</span><span class='va'>a_tibble</span>, <span class='st'>"Resource title"</span>, <span class='va'>d</span><span class='op'>$</span><span class='va'>id</span>,
+  resource_id <span class='op'>=</span> <span class='st'>"502c74d7-32be-453f-aff6-c50aedd3deed"</span>
+<span class='op'>)</span>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

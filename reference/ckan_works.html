@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Check whether API token is set and TSC is online — tsc_works • tscr</title>
+<title>Check whether CKAN is accessible with given credentials — ckan_works • tscr</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="Check whether API token is set and TSC is online — tsc_works" />
+<meta property="og:title" content="Check whether CKAN is accessible with given credentials — ckan_works" />
 <meta property="og:description" content="" />
 
 
@@ -137,42 +137,49 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Check whether API token is set and TSC is online</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dbca-wa/tscr/blob/master/R/tsc_works.R'><code>R/tsc_works.R</code></a></small>
-    <div class="hidden name"><code>tsc_works.Rd</code></div>
+    <h1>Check whether CKAN is accessible with given credentials</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dbca-wa/tscr/blob/master/R/ckan_works.R'><code>R/ckan_works.R</code></a></small>
+    <div class="hidden name"><code>ckan_works.Rd</code></div>
     </div>
 
     <div class="ref-description">
     <p><a href='https://lifecycle.r-lib.org/articles/stages.html#stable'><img src='figures/lifecycle-stable.svg' alt='[Stable]' /></a></p>
     </div>
 
-    <pre class="usage"><span class='fu'>tsc_works</span><span class='op'>(</span>api_url <span class='op'>=</span> <span class='fu'><a href='tsc_settings.html'>get_tsc_api_url</a></span><span class='op'>(</span><span class='op'>)</span>, api_token <span class='op'>=</span> <span class='fu'><a href='tsc_settings.html'>get_tsc_api_token</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>ckan_works</span><span class='op'>(</span>
+  url <span class='op'>=</span> <span class='fu'>ckanr</span><span class='fu'>::</span><span class='fu'><a href='https://docs.ropensci.org/ckanr/reference/ckanr_settings.html'>get_default_url</a></span><span class='op'>(</span><span class='op'>)</span>,
+  key <span class='op'>=</span> <span class='fu'>ckanr</span><span class='fu'>::</span><span class='fu'><a href='https://docs.ropensci.org/ckanr/reference/ckanr_settings.html'>get_default_key</a></span><span class='op'>(</span><span class='op'>)</span>,
+  verbose <span class='op'>=</span> <span class='fu'><a href='tsc_settings.html'>get_tsc_verbose</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>api_url</th>
-      <td><p>(character) The TSC API URL,
-default <code><a href='tsc_settings.html'>get_tsc_api_url</a></code>, see <code><a href='tsc_setup.html'>tsc_setup</a></code></p></td>
+      <th>url</th>
+      <td><p>The CKAN URL. Set through <code><a href='https://docs.ropensci.org/ckanr/reference/ckanr_setup.html'>ckanr::ckanr_setup()</a></code>.</p></td>
     </tr>
     <tr>
-      <th>api_token</th>
-      <td><p>(character) The TSC API token,
-default <code><a href='tsc_settings.html'>get_tsc_api_token</a></code>, see <code><a href='tsc_setup.html'>tsc_setup</a></code></p></td>
+      <th>key</th>
+      <td><p>The CKAN API key. Set through <code><a href='https://docs.ropensci.org/ckanr/reference/ckanr_setup.html'>ckanr::ckanr_setup()</a></code>.</p></td>
+    </tr>
+    <tr>
+      <th>verbose</th>
+      <td><p>Whether to show verbose messages.
+Default: <code><a href='tsc_settings.html'>get_tsc_verbose</a></code>.</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Logical (TRUE/FALSE) whether the configured CKAN works with the
+given credentials.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other helpers: 
-<code><a href='get_more.html'>get_more</a>()</code>,
-<code><a href='tsc_msg_abort.html'>tsc_msg_abort</a>()</code>,
-<code><a href='tsc_msg_info.html'>tsc_msg_info</a>()</code>,
-<code><a href='tsc_msg_noop.html'>tsc_msg_noop</a>()</code>,
-<code><a href='tsc_msg_success.html'>tsc_msg_success</a>()</code>,
-<code><a href='tsc_msg_warn.html'>tsc_msg_warn</a>()</code>,
-<code><a href='tsc_online.html'>tsc_online</a>()</code></p></div>
+    <div class='dont-index'><p>Other ckan: 
+<code><a href='dl_mdbzip.html'>dl_mdbzip</a>()</code>,
+<code><a href='upload_file_to_ckan.html'>upload_file_to_ckan</a>()</code>,
+<code><a href='upload_to_ckan.html'>upload_to_ckan</a>()</code></p></div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
