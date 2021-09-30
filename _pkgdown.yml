@@ -9,6 +9,10 @@ reference:
   desc: Top level functions to interact with the WACensus API.
   contents:
   - has_concept("wacensus")
+- title: CKAN helpers
+  desc: Top level functions to interact with the CKAN API and file resources.
+  contents:
+  - has_concept("ckan")
 - title: Data
   desc: Included example datasets for use in testing and as templates for data import.
   contents:

@@ -11,7 +11,7 @@
   "relatedLink": "https://dbca-wa.github.io/tscr/",
   "issueTracker": "https://github.com/dbca-wa/tscr/issues/new/choose",
   "license": "https://spdx.org/licenses/MIT",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
@@ -52,45 +52,6 @@
   "softwareSuggestions": [
     {
       "@type": "SoftwareApplication",
-      "identifier": "testthat",
-      "name": "testthat",
-      "version": ">= 2.1.0",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=testthat"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "identifier": "knitr",
-      "name": "knitr",
-      "version": ">= 1.29",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=knitr"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "identifier": "rmarkdown",
-      "name": "rmarkdown",
-      "version": ">= 2.3",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=rmarkdown"
-    },
-    {
-      "@type": "SoftwareApplication",
       "identifier": "covr",
       "name": "covr",
       "version": ">= 3.5.0",
@@ -101,6 +62,19 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=covr"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "devtools",
+      "name": "devtools",
+      "version": ">= 2.3.1",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=devtools"
     },
     {
       "@type": "SoftwareApplication",
@@ -130,41 +104,29 @@
     },
     {
       "@type": "SoftwareApplication",
-      "identifier": "mapview",
-      "name": "mapview",
-      "version": ">= 2.7.8",
+      "identifier": "goodpractice",
+      "name": "goodpractice",
+      "version": ">= 1.0.2",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
         "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
       },
-      "sameAs": "https://CRAN.R-project.org/package=mapview"
+      "sameAs": "https://CRAN.R-project.org/package=goodpractice"
     },
     {
       "@type": "SoftwareApplication",
-      "identifier": "reactable",
-      "name": "reactable",
+      "identifier": "knitr",
+      "name": "knitr",
+      "version": ">= 1.29",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
         "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
       },
-      "sameAs": "https://CRAN.R-project.org/package=reactable"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "identifier": "styler",
-      "name": "styler",
-      "version": ">= 1.3.2",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=styler"
+      "sameAs": "https://CRAN.R-project.org/package=knitr"
     },
     {
       "@type": "SoftwareApplication",
@@ -181,29 +143,68 @@
     },
     {
       "@type": "SoftwareApplication",
-      "identifier": "goodpractice",
-      "name": "goodpractice",
-      "version": ">= 1.0.2",
+      "identifier": "mapview",
+      "name": "mapview",
+      "version": ">= 2.7.8",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
         "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
       },
-      "sameAs": "https://CRAN.R-project.org/package=goodpractice"
+      "sameAs": "https://CRAN.R-project.org/package=mapview"
     },
     {
       "@type": "SoftwareApplication",
-      "identifier": "devtools",
-      "name": "devtools",
-      "version": ">= 2.3.1",
+      "identifier": "reactable",
+      "name": "reactable",
+      "version": ">= 0.2.3",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
         "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
       },
-      "sameAs": "https://CRAN.R-project.org/package=devtools"
+      "sameAs": "https://CRAN.R-project.org/package=reactable"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "rmarkdown",
+      "name": "rmarkdown",
+      "version": ">= 2.3",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=rmarkdown"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "styler",
+      "name": "styler",
+      "version": ">= 1.3.2",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=styler"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "testthat",
+      "name": "testthat",
+      "version": ">= 2.1.0",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=testthat"
     }
   ],
   "softwareRequirements": [
@@ -254,6 +255,19 @@
     },
     {
       "@type": "SoftwareApplication",
+      "identifier": "ckanr",
+      "name": "ckanr",
+      "version": ">= 0.6.0",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=ckanr"
+    },
+    {
+      "@type": "SoftwareApplication",
       "identifier": "dplyr",
       "name": "dplyr",
       "version": ">= 1.0.7",
@@ -280,19 +294,6 @@
     },
     {
       "@type": "SoftwareApplication",
-      "identifier": "rlang",
-      "name": "rlang",
-      "version": ">= 0.4.11",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=rlang"
-    },
-    {
-      "@type": "SoftwareApplication",
       "identifier": "httr",
       "name": "httr",
       "version": ">= 1.4.2",
@@ -303,6 +304,32 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=httr"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "Hmisc",
+      "name": "Hmisc",
+      "version": ">= 4.5-0",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=Hmisc"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "janitor",
+      "name": "janitor",
+      "version": ">= 2.1.0",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=janitor"
     },
     {
       "@type": "SoftwareApplication",
@@ -358,21 +385,35 @@
     },
     {
       "@type": "SoftwareApplication",
-      "identifier": "janitor",
-      "name": "janitor",
-      "version": ">= 2.1.0",
+      "identifier": "readr",
+      "name": "readr",
+      "version": ">= 2.0.2",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
         "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
       },
-      "sameAs": "https://CRAN.R-project.org/package=janitor"
+      "sameAs": "https://CRAN.R-project.org/package=readr"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "rlang",
+      "name": "rlang",
+      "version": ">= 0.4.11",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=rlang"
     },
     {
       "@type": "SoftwareApplication",
       "identifier": "purrr",
       "name": "purrr",
+      "version": ">= 0.3.4",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -384,7 +425,7 @@
   ],
   "releaseNotes": "https://github.com/dbca-wa/tscr/blob/master/NEWS.md",
   "readme": "https://github.com/dbca-wa/tscr/blob/master/README.md",
-  "fileSize": "4693.24KB",
+  "fileSize": "4713.185KB",
   "contIntegration": "https://codecov.io/gh/dbca-wa/tscr?branch=master",
   "keywords": [
     "threatened",

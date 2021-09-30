@@ -4,6 +4,14 @@
 ## Documentation
 ## Data
 
+# tscr 0.2.1
+## Major fixes
+* Add CKAN helpers: download MDB ZIP, upload data and file resources. 
+  (helpers for #3)
+## Minor fixes
+## Documentation
+## Data
+
 # tscr 0.2.0
 ## Major fixes
 * Add `tsc_POST`, `tsc_chunk_post`, `tsc_occ_obs_post` for paginated upload (#2)

@@ -8,8 +8,8 @@
 tsc_works <- function(api_url = get_tsc_api_url(),
                       api_token = get_tsc_api_token()) {
   if (is.null(api_token)) {
-    "API token not set, see vignette setup" %>%
-      tsc_msg_abort()
+    tsc_msg_info("TSC API token not set, see vignette setup")
+    return(FALSE)
   }
   auth <- httr::add_headers(c(Authorization = api_token))
   res <- httr::GET(api_url, auth)

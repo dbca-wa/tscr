@@ -5,11 +5,12 @@ test_that("tsc_chunk_post works", {
   testthat::expect_message(
     suppressWarnings(
       x <- tsc_chunk_post(areas,
-                          "area",
-                          chunksize = 10,
-                          api_url = get_tsc_test_api_url(),
-                          api_token = get_tsc_test_api_token(),
-                          verbose = TRUE)
+        "area",
+        chunksize = 10,
+        api_url = get_tsc_test_api_url(),
+        api_token = get_tsc_test_api_token(),
+        verbose = TRUE
+      )
     )
   )
   testthat::expect_s3_class(x, "tsc_api_response")
