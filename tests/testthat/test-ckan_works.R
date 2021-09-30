@@ -1,4 +1,5 @@
 test_that("ckan_works warns on missing credentials", {
+  ckanr::ckanr_setup(url = "http://httpstat.us/200", key = "")
   expect_message(ckan_works(url = "http://httpstat.us/200", key = ""))
   expect_message(ckan_works(url = "http://httpstat.us/200", key = NULL))
 })

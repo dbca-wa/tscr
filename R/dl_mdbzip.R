@@ -11,6 +11,7 @@
 #' @param dateformat The parameter dateformat for `Hmisc::mdb.get()`,
 #'   default: `%Y-%m-%d`.
 #' @param as.is The parameter `as.is` for `Hmisc::mdb.get()`, default: TRUE.
+#' @template param-verbose
 #' @returns The `Hmisc::mdb.get` connection.
 #' @family ckan
 #' @examples

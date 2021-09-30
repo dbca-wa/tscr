@@ -22,6 +22,9 @@ will be created if not existing. Default: \code{here::here("data")}.}
 default: \verb{\%Y-\%m-\%d}.}
 
 \item{as.is}{The parameter \code{as.is} for \code{Hmisc::mdb.get()}, default: TRUE.}
+
+\item{verbose}{Whether to show verbose messages.
+Default: \code{\link{get_tsc_verbose}}.}
 }
 \value{
 The \code{Hmisc::mdb.get} connection.
