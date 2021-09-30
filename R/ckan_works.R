@@ -3,14 +3,16 @@
 #' \lifecycle{stable}
 #' @param url The CKAN URL. Set through `ckanr::ckanr_setup()`.
 #' @param key The CKAN API key. Set through `ckanr::ckanr_setup()`.
+#' @template param-verbose
 #' @return Logical (TRUE/FALSE) whether the configured CKAN works with the
 #'   given credentials.
 #' @family ckan
 #' @export
 ckan_works <- function(url = ckanr::get_default_url(),
-                       key = ckanr::get_default_key()) {
+                       key = ckanr::get_default_key(),
+                       verbose = get_tsc_verbose()) {
   if (is.null(key) || key == "") {
-    tsc_msg_info("CKAN API key not set")
+    tsc_msg_info("CKAN API key not set", verbose = verbose)
     return(FALSE)
   }
 

@@ -4,12 +4,19 @@
 \alias{ckan_works}
 \title{Check whether CKAN is accessible with given credentials}
 \usage{
-ckan_works(url = ckanr::get_default_url(), key = ckanr::get_default_key())
+ckan_works(
+  url = ckanr::get_default_url(),
+  key = ckanr::get_default_key(),
+  verbose = get_tsc_verbose()
+)
 }
 \arguments{
 \item{url}{The CKAN URL. Set through \code{ckanr::ckanr_setup()}.}
 
 \item{key}{The CKAN API key. Set through \code{ckanr::ckanr_setup()}.}
+
+\item{verbose}{Whether to show verbose messages.
+Default: \code{\link{get_tsc_verbose}}.}
 }
 \value{
 Logical (TRUE/FALSE) whether the configured CKAN works with the
