@@ -1,6 +1,6 @@
 test_that("ckan_works warns on missing credentials", {
-  expect_message(ckan_works(key = ""))
-  expect_message(ckan_works(key = NULL))
+  expect_message(ckan_works(url = "http://httpstat.us/200", key = ""))
+  expect_message(ckan_works(url = "http://httpstat.us/200", key = NULL))
 })
 
 test_that("ckan_works returns FALSE with non-CKAN url", {
