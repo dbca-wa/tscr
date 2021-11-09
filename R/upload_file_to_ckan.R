@@ -8,6 +8,7 @@
 #'
 #' @param rid An existing CKAN resource ID.
 #' @param fn The file to upload as the CKAN file resource.
+#' @template param-verbose
 #' @return NULL if the file is missing, or the resource ID.
 #' @export
 #' @family ckan
@@ -18,7 +19,7 @@
 #' )
 #' upload_file_to_ckan("1b5e6401-82fe-4728-83be-f3f8ea4b5876", "EDA_flora.html")
 #' }
-upload_file_to_ckan <- function(rid, fn) {
+upload_file_to_ckan <- function(rid, fn, verbose = get_tsc_verbose()) {
   if (!fs::file_exists(fn)) {
     "File {fn} does not exist, skipping." %>%
       glue::glue() %>%

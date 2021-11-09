@@ -4,12 +4,15 @@
 \alias{upload_file_to_ckan}
 \title{Upload a file to an existing CKAN resource ID or skip if file is missing}
 \usage{
-upload_file_to_ckan(rid, fn)
+upload_file_to_ckan(rid, fn, verbose = get_tsc_verbose())
 }
 \arguments{
 \item{rid}{An existing CKAN resource ID.}
 
 \item{fn}{The file to upload as the CKAN file resource.}
+
+\item{verbose}{Whether to show verbose messages.
+Default: \code{\link{get_tsc_verbose}}.}
 }
 \value{
 NULL if the file is missing, or the resource ID.
