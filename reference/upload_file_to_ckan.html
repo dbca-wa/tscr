@@ -148,7 +148,7 @@ compiled Rmd workbook (i.e a HTML file)." />
 compiled Rmd workbook (i.e a HTML file).</p>
     </div>
 
-    <pre class="usage"><span class='fu'>upload_file_to_ckan</span><span class='op'>(</span><span class='va'>rid</span>, <span class='va'>fn</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>upload_file_to_ckan</span><span class='op'>(</span><span class='va'>rid</span>, <span class='va'>fn</span>, verbose <span class='op'>=</span> <span class='fu'><a href='tsc_settings.html'>get_tsc_verbose</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -160,6 +160,11 @@ compiled Rmd workbook (i.e a HTML file).</p>
     <tr>
       <th>fn</th>
       <td><p>The file to upload as the CKAN file resource.</p></td>
+    </tr>
+    <tr>
+      <th>verbose</th>
+      <td><p>Whether to show verbose messages.
+Default: <code><a href='tsc_settings.html'>get_tsc_verbose</a></code>.</p></td>
     </tr>
     </table>
 
