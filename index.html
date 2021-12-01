@@ -23,6 +23,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -35,18 +37,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">tscr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
@@ -58,22 +54,26 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li class="divider">
-    <li class="dropdown-header">Setup</li>
+    </li>
+<li class="dropdown-header">Setup</li>
     <li>
       <a href="articles/setup.html">Setup tscr</a>
     </li>
     <li class="divider">
-    <li class="dropdown-header">Import</li>
+    </li>
+<li class="dropdown-header">Import</li>
     <li>
       <a href="articles/wacensus.html">Update taxonomic names from WACensus</a>
     </li>
     <li class="divider">
-    <li class="dropdown-header">Access</li>
+    </li>
+<li class="dropdown-header">Access</li>
     <li>
       <a href="articles/occurrences.html">Access taxon or community occurrences</a>
     </li>
     <li class="divider">
-    <li class="dropdown-header">Analyse</li>
+    </li>
+<li class="dropdown-header">Analyse</li>
   </ul>
 </li>
 <li>
@@ -82,7 +82,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/dbca-wa/tscr/">
+  <a href="https://github.com/dbca-wa/tscr/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -99,16 +99,16 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="tscr-an-r-client-for-the-threatened-species-and-communities-db-tsc-" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#tscr-an-r-client-for-the-threatened-species-and-communities-db-tsc-" class="anchor"></a><code>tscr</code>: An R client for the Threatened Species and Communities DB (TSC) <img src="reference/figures/tscr_logo.png" align="right" alt="tscr logo" width="120">
+<div class="section level1">
+<div class="page-header"><h1 id="tscr-an-r-client-for-the-threatened-species-and-communities-db-tsc-">
+<code>tscr</code>: An R client for the Threatened Species and Communities DB (TSC) <img src="reference/figures/tscr_logo.png" align="right" alt="tscr logo" width="120"><a class="anchor" aria-label="anchor" href="#tscr-an-r-client-for-the-threatened-species-and-communities-db-tsc-"></a>
 </h1></div>
 <!-- badges: start -->
 
 <p>The goal of <code>tscr</code> is to provide read/write access to TSC data, and to provide working examples of analysis and visualisation of TSC data to answer QA, ecological, and management questions as well as working data ETL pipelines.</p>
-<div id="for-conservation-managers-and-ecologists" class="section level2">
-<h2 class="hasAnchor">
-<a href="#for-conservation-managers-and-ecologists" class="anchor"></a>For conservation managers and ecologists</h2>
+<div class="section level2">
+<h2 id="for-conservation-managers-and-ecologists">For conservation managers and ecologists<a class="anchor" aria-label="anchor" href="#for-conservation-managers-and-ecologists"></a>
+</h2>
 <p>Here we’ll list working examples of conservation management nature, ecological, or data QA questions answered with TSC data.</p>
 <p>Example questions (to be replaced with working examples):</p>
 <ul>
@@ -120,11 +120,11 @@
 <li>List conservation documents coming up for review within the next 6 months.</li>
 <li>List occurrences flagged for review.</li>
 </ul>
-<p>Help us complete this list by filing new “Data export or analysis requests” <a href="https://github.com/dbca-wa/tscr/issues/new/choose">here</a>.</p>
+<p>Help us complete this list by filing new “Data export or analysis requests” <a href="https://github.com/dbca-wa/tscr/issues/new/choose" class="external-link">here</a>.</p>
 </div>
-<div id="for-data-engineers" class="section level2">
-<h2 class="hasAnchor">
-<a href="#for-data-engineers" class="anchor"></a>For data engineers</h2>
+<div class="section level2">
+<h2 id="for-data-engineers">For data engineers<a class="anchor" aria-label="anchor" href="#for-data-engineers"></a>
+</h2>
 <p>If you wish to run any of the included working examples or create new data analyses, install this package and configure <code>tscr</code> to TSC’s API with your own credentials as outlined below.</p>
 <p>Use cases:</p>
 <ul>
@@ -136,55 +136,55 @@
 <p>Install <code>tscr</code>:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"dbca-wa/tscr"</span>, 
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"dbca-wa/tscr"</span>, 
                         dependencies <span class="op">=</span> <span class="cn">TRUE</span>, 
                         upgrade <span class="op">=</span> <span class="st">"ask"</span>,
                         build_vignettes <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
-<p>Set up <code>tscr</code>, run <code><a href="https://usethis.r-lib.org/reference/edit.html">usethis::edit_r_environ()</a></code>, add your TSC API Token, then restart your R session.</p>
+<p>Set up <code>tscr</code>, run <code><a href="https://usethis.r-lib.org/reference/edit.html" class="external-link">usethis::edit_r_environ()</a></code>, add your TSC API Token, then restart your R session.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">TSC_API_TOKEN</span><span class="op">=</span><span class="st">"Token xxx"</span></code></pre></div>
 <p>Read <a href="https://dbca-wa.github.io/tscr/articles/setup.html"><code>vignette("setup", package="tscr")</code></a>) to learn more about the configuration of <code>tscr</code>.</p>
 <p>Working examples for data access and analyses are available as package vignettes (<code>browseVignettes("tscr")</code>), and as articles <a href="https://dbca-wa.github.io/tscr/index.html">here</a>.</p>
 </div>
-<div id="for-contributors" class="section level2">
-<h2 class="hasAnchor">
-<a href="#for-contributors" class="anchor"></a>For contributors</h2>
-<p>Found a bug in <code>tscr</code>, need a new <code>tscr</code> feature, or need a working example to generate a data product from TSC? Let us know <a href="https://github.com/dbca-wa/tscr/issues/new/choose">here</a>!</p>
-<p>Want to chat about TSC? Join the <a href="https://teams.microsoft.com/l/channel/19%3a20412eea61c949e59460ece939a128cd%40thread.tacv2/General?groupId=920e28d1-f344-429d-a2cb-613103a99b9e&amp;tenantId=7b934664-cdcf-4e28-a3ee-1a5bcca0a1b6">“TSC” group on DBCA’s Teams</a>! (You’ll need a DBCA account to access this group.)</p>
+<div class="section level2">
+<h2 id="for-contributors">For contributors<a class="anchor" aria-label="anchor" href="#for-contributors"></a>
+</h2>
+<p>Found a bug in <code>tscr</code>, need a new <code>tscr</code> feature, or need a working example to generate a data product from TSC? Let us know <a href="https://github.com/dbca-wa/tscr/issues/new/choose" class="external-link">here</a>!</p>
+<p>Want to chat about TSC? Join the <a href="https://teams.microsoft.com/l/channel/19%3a20412eea61c949e59460ece939a128cd%40thread.tacv2/General?groupId=920e28d1-f344-429d-a2cb-613103a99b9e&amp;tenantId=7b934664-cdcf-4e28-a3ee-1a5bcca0a1b6" class="external-link">“TSC” group on DBCA’s Teams</a>! (You’ll need a DBCA account to access this group.)</p>
 <p>Want to contribute code? Start with the <a href="https://dbca-wa.github.io/tscr/CONTRIBUTING.html">contribution guide</a>, but don’t be afraid to ask for help and submit early PRs.</p>
 </div>
-<div id="for-package-maintainers" class="section level2">
-<h2 class="hasAnchor">
-<a href="#for-package-maintainers" class="anchor"></a>For package maintainers</h2>
+<div class="section level2">
+<h2 id="for-package-maintainers">For package maintainers<a class="anchor" aria-label="anchor" href="#for-package-maintainers"></a>
+</h2>
 <p>Tasks that can be run for each release are shown below.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/use_version.html">use_version</a></span><span class="op">(</span>which <span class="op">=</span> <span class="st">"dev"</span><span class="op">)</span> <span class="co"># patch, dev, minor, major</span>
+<code class="sourceCode R"><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/use_version.html" class="external-link">use_version</a></span><span class="op">(</span>which <span class="op">=</span> <span class="st">"dev"</span><span class="op">)</span> <span class="co"># patch, dev, minor, major</span>
 
 <span class="co"># Rebuild included package data, used for tests and vignettes</span>
-<span class="kw"><a href="https://rdrr.io/r/base/source.html">source</a></span><span class="op">(</span><span class="fu">here</span><span class="fu">::</span><span class="fu">here</span><span class="op">(</span><span class="st">"data-raw/make_data.R"</span><span class="op">)</span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/source.html" class="external-link">source</a></span><span class="op">(</span><span class="fu">here</span><span class="fu">::</span><span class="fu">here</span><span class="op">(</span><span class="st">"data-raw/make_data.R"</span><span class="op">)</span><span class="op">)</span>
 
 <span class="co"># Tests shall pass</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/test.html">test</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/test.html" class="external-link">test</a></span><span class="op">(</span><span class="op">)</span>
 
-<span class="fu">styler</span><span class="fu">::</span><span class="fu"><a href="https://styler.r-lib.org/reference/style_pkg.html">style_pkg</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu">styler</span><span class="fu">::</span><span class="fu"><a href="https://styler.r-lib.org/reference/style_pkg.html" class="external-link">style_pkg</a></span><span class="op">(</span><span class="op">)</span>
 <span class="fu">lintr</span><span class="fu">:::</span><span class="fu">addin_lint_package</span><span class="op">(</span><span class="op">)</span> <span class="co"># some lint errors are OK</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/document.html">document</a></span><span class="op">(</span>roclets <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"rd"</span>, <span class="st">"collate"</span>, <span class="st">"namespace"</span>, <span class="st">"vignette"</span><span class="op">)</span><span class="op">)</span>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/document.html" class="external-link">document</a></span><span class="op">(</span>roclets <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"rd"</span>, <span class="st">"collate"</span>, <span class="st">"namespace"</span>, <span class="st">"vignette"</span><span class="op">)</span><span class="op">)</span>
 <span class="fu">spelling</span><span class="fu">::</span><span class="fu">spell_check_package</span><span class="op">(</span><span class="op">)</span>
 <span class="fu">spelling</span><span class="fu">::</span><span class="fu">spell_check_files</span><span class="op">(</span><span class="st">"README.Rmd"</span>, lang <span class="op">=</span> <span class="st">"en_AU"</span><span class="op">)</span>
 <span class="fu">spelling</span><span class="fu">::</span><span class="fu">update_wordlist</span><span class="op">(</span><span class="op">)</span>
 <span class="fu">codemetar</span><span class="fu">::</span><span class="fu">write_codemeta</span><span class="op">(</span><span class="op">)</span>
-<span class="kw">if</span> <span class="op">(</span><span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="http://fs.r-lib.org/reference/file_info.html">file_info</a></span><span class="op">(</span><span class="st">"README.md"</span><span class="op">)</span><span class="op">$</span><span class="va">modification_time</span> <span class="op">&lt;</span>
-  <span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="http://fs.r-lib.org/reference/file_info.html">file_info</a></span><span class="op">(</span><span class="st">"README.Rmd"</span><span class="op">)</span><span class="op">$</span><span class="va">modification_time</span><span class="op">)</span> <span class="op">{</span>
-  <span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/render.html">render</a></span><span class="op">(</span><span class="st">"README.Rmd"</span>, encoding <span class="op">=</span> <span class="st">"UTF-8"</span>, clean <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-  <span class="kw">if</span> <span class="op">(</span><span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="http://fs.r-lib.org/reference/file_access.html">file_exists</a></span><span class="op">(</span><span class="st">"README.html"</span><span class="op">)</span><span class="op">)</span> <span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="http://fs.r-lib.org/reference/delete.html">file_delete</a></span><span class="op">(</span><span class="st">"README.html"</span><span class="op">)</span>
+<span class="kw">if</span> <span class="op">(</span><span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="http://fs.r-lib.org/reference/file_info.html" class="external-link">file_info</a></span><span class="op">(</span><span class="st">"README.md"</span><span class="op">)</span><span class="op">$</span><span class="va">modification_time</span> <span class="op">&lt;</span>
+  <span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="http://fs.r-lib.org/reference/file_info.html" class="external-link">file_info</a></span><span class="op">(</span><span class="st">"README.Rmd"</span><span class="op">)</span><span class="op">$</span><span class="va">modification_time</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/render.html" class="external-link">render</a></span><span class="op">(</span><span class="st">"README.Rmd"</span>, encoding <span class="op">=</span> <span class="st">"UTF-8"</span>, clean <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+  <span class="kw">if</span> <span class="op">(</span><span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="http://fs.r-lib.org/reference/file_access.html" class="external-link">file_exists</a></span><span class="op">(</span><span class="st">"README.html"</span><span class="op">)</span><span class="op">)</span> <span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="http://fs.r-lib.org/reference/delete.html" class="external-link">file_delete</a></span><span class="op">(</span><span class="st">"README.html"</span><span class="op">)</span>
 <span class="op">}</span>
 <span class="co">#</span>
 <span class="co"># Checks</span>
-<span class="fu">goodpractice</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/goodpractice/man/gp.html">goodpractice</a></span><span class="op">(</span>quiet <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/check.html">check</a></span><span class="op">(</span>cran <span class="op">=</span> <span class="cn">FALSE</span>, remote <span class="op">=</span> <span class="cn">TRUE</span>, incoming <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="fu">goodpractice</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/goodpractice/man/gp.html" class="external-link">goodpractice</a></span><span class="op">(</span>quiet <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/check.html" class="external-link">check</a></span><span class="op">(</span>cran <span class="op">=</span> <span class="cn">FALSE</span>, remote <span class="op">=</span> <span class="cn">TRUE</span>, incoming <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 <span class="co">#</span>
 <span class="co"># Add new feature to news if user-facing</span>
-<span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/edit_file.html">edit_file</a></span><span class="op">(</span><span class="st">"NEWS.md"</span><span class="op">)</span>
+<span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/edit_file.html" class="external-link">edit_file</a></span><span class="op">(</span><span class="st">"NEWS.md"</span><span class="op">)</span>
 
 <span class="co"># Commit and push</span></code></pre></div>
 </div>
@@ -193,55 +193,66 @@
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Browse source code at <br><a href="https://github.com/dbca-wa/tscr/">https://​github.com/​dbca-wa/​tscr/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/dbca-wa/tscr/issues/new/choose">https://​github.com/​dbca-wa/​tscr/​issues/​new/​choose</a>
-</li>
+<li><a href="https://github.com/dbca-wa/tscr/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/dbca-wa/tscr/issues/new/choose" class="external-link">Report a bug</a></li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
-<li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
+<li><small><a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
+
 <div class="community">
-<h2>Community</h2>
+<h2 data-toc-skip>Community</h2>
 <ul class="list-unstyled">
 <li><a href="CONTRIBUTING.html">Contributing guide</a></li>
 <li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
 </ul>
 </div>
-<div class="developers">
-<h2>Developers</h2>
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li>Florian W. Mayer <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0003-4269-4242" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li><a href="authors.html#citation">Citing tscr</a></li>
+</ul>
+</div>
+
+<div class="developers">
+<h2 data-toc-skip>Developers</h2>
+<ul class="list-unstyled">
+<li>Florian W. Mayer <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0003-4269-4242" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 <li>DBCA <br><small class="roles"> Copyright holder, funder </small>  </li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/dbca-wa/tscr/actions"><img src="https://github.com/dbca-wa/tscr/workflows/tic/badge.svg" alt="CI"></a></li>
-<li><a href="https://codecov.io/gh/dbca-wa/tscr?branch=master"><img src="https://codecov.io/gh/dbca-wa/tscr/branch/master/graph/badge.svg" alt="Test coverage"></a></li>
-<li><a href="https://github.com/dbca-wa/tscr/commits/master"><img src="https://img.shields.io/github/last-commit/dbca-wa/tscr.svg" alt="Last-changedate"></a></li>
-<li><a href="https://github.com/dbca-wa/tscr/issues"><img src="https://img.shields.io/github/issues/dbca-wa/tscr.svg?style=popout" alt="GitHub issues"></a></li>
+<li><a href="https://github.com/dbca-wa/tscr/actions" class="external-link"><img src="https://github.com/dbca-wa/tscr/workflows/tic/badge.svg" alt="CI"></a></li>
+<li><a href="https://codecov.io/gh/dbca-wa/tscr?branch=master" class="external-link"><img src="https://codecov.io/gh/dbca-wa/tscr/branch/master/graph/badge.svg" alt="Test coverage"></a></li>
+<li><a href="https://github.com/dbca-wa/tscr/commits/master" class="external-link"><img src="https://img.shields.io/github/last-commit/dbca-wa/tscr.svg" alt="Last-changedate"></a></li>
+<li><a href="https://github.com/dbca-wa/tscr/issues" class="external-link"><img src="https://img.shields.io/github/issues/dbca-wa/tscr.svg?style=popout" alt="GitHub issues"></a></li>
 </ul>
 </div>
-</div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Florian W. Mayer, DBCA.</p>
+  <p></p>
+<p>Developed by Florian W. Mayer, DBCA.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.0.</p>
 </div>
 
       </footer>
@@ -249,6 +260,8 @@
 
   
 
+
+  
 
   </body>
 </html>

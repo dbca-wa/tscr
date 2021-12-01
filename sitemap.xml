@@ -1,7 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://dbca-wa.github.io/tscr/404.html</loc>
+  </url>
+  <url>
+    <loc>https://dbca-wa.github.io/tscr/CODE_OF_CONDUCT.html</loc>
+  </url>
+  <url>
+    <loc>https://dbca-wa.github.io/tscr/CONTRIBUTING.html</loc>
+  </url>
+  <url>
+    <loc>https://dbca-wa.github.io/tscr/LICENSE-text.html</loc>
+  </url>
+  <url>
+    <loc>https://dbca-wa.github.io/tscr/LICENSE.html</loc>
+  </url>
+  <url>
+    <loc>https://dbca-wa.github.io/tscr/articles/index.html</loc>
+  </url>
+  <url>
+    <loc>https://dbca-wa.github.io/tscr/articles/occurrences.html</loc>
+  </url>
+  <url>
+    <loc>https://dbca-wa.github.io/tscr/articles/setup.html</loc>
+  </url>
+  <url>
+    <loc>https://dbca-wa.github.io/tscr/articles/wacensus.html</loc>
+  </url>
+  <url>
+    <loc>https://dbca-wa.github.io/tscr/authors.html</loc>
+  </url>
+  <url>
     <loc>https://dbca-wa.github.io/tscr/index.html</loc>
+  </url>
+  <url>
+    <loc>https://dbca-wa.github.io/tscr/news/index.html</loc>
   </url>
   <url>
     <loc>https://dbca-wa.github.io/tscr/reference/areas.html</loc>
@@ -26,6 +59,9 @@
   </url>
   <url>
     <loc>https://dbca-wa.github.io/tscr/reference/handle_http_status.html</loc>
+  </url>
+  <url>
+    <loc>https://dbca-wa.github.io/tscr/reference/index.html</loc>
   </url>
   <url>
     <loc>https://dbca-wa.github.io/tscr/reference/lifecycle_shim.html</loc>
@@ -95,14 +131,5 @@
   </url>
   <url>
     <loc>https://dbca-wa.github.io/tscr/reference/upsert_geojson.html</loc>
-  </url>
-  <url>
-    <loc>https://dbca-wa.github.io/tscr/articles/occurrences.html</loc>
-  </url>
-  <url>
-    <loc>https://dbca-wa.github.io/tscr/articles/setup.html</loc>
-  </url>
-  <url>
-    <loc>https://dbca-wa.github.io/tscr/articles/wacensus.html</loc>
   </url>
 </urlset>
