@@ -164,11 +164,11 @@
 <span class="kw"><a href="https://rdrr.io/r/base/source.html" class="external-link">source</a></span><span class="op">(</span><span class="fu">here</span><span class="fu">::</span><span class="fu">here</span><span class="op">(</span><span class="st">"data-raw/make_data.R"</span><span class="op">)</span><span class="op">)</span>
 
 <span class="co"># Tests shall pass</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/test.html" class="external-link">test</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/test.html" class="external-link">test</a></span><span class="op">(</span><span class="op">)</span>
 
 <span class="fu">styler</span><span class="fu">::</span><span class="fu"><a href="https://styler.r-lib.org/reference/style_pkg.html" class="external-link">style_pkg</a></span><span class="op">(</span><span class="op">)</span>
 <span class="fu">lintr</span><span class="fu">:::</span><span class="fu">addin_lint_package</span><span class="op">(</span><span class="op">)</span> <span class="co"># some lint errors are OK</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/document.html" class="external-link">document</a></span><span class="op">(</span>roclets <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"rd"</span>, <span class="st">"collate"</span>, <span class="st">"namespace"</span>, <span class="st">"vignette"</span><span class="op">)</span><span class="op">)</span>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/document.html" class="external-link">document</a></span><span class="op">(</span>roclets <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"rd"</span>, <span class="st">"collate"</span>, <span class="st">"namespace"</span>, <span class="st">"vignette"</span><span class="op">)</span><span class="op">)</span>
 <span class="fu">spelling</span><span class="fu">::</span><span class="fu">spell_check_package</span><span class="op">(</span><span class="op">)</span>
 <span class="fu">spelling</span><span class="fu">::</span><span class="fu">spell_check_files</span><span class="op">(</span><span class="st">"README.Rmd"</span>, lang <span class="op">=</span> <span class="st">"en_AU"</span><span class="op">)</span>
 <span class="fu">spelling</span><span class="fu">::</span><span class="fu">update_wordlist</span><span class="op">(</span><span class="op">)</span>
@@ -181,7 +181,7 @@
 <span class="co">#</span>
 <span class="co"># Checks</span>
 <span class="fu">goodpractice</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/goodpractice/man/gp.html" class="external-link">goodpractice</a></span><span class="op">(</span>quiet <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/check.html" class="external-link">check</a></span><span class="op">(</span>cran <span class="op">=</span> <span class="cn">FALSE</span>, remote <span class="op">=</span> <span class="cn">TRUE</span>, incoming <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/check.html" class="external-link">check</a></span><span class="op">(</span>cran <span class="op">=</span> <span class="cn">FALSE</span>, remote <span class="op">=</span> <span class="cn">TRUE</span>, incoming <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 <span class="co">#</span>
 <span class="co"># Add new feature to news if user-facing</span>
 <span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/edit_file.html" class="external-link">edit_file</a></span><span class="op">(</span><span class="st">"NEWS.md"</span><span class="op">)</span>
